@@ -1,7 +1,14 @@
-
+//
+//  TeaAnimation.h
+//  AnimationPlay
+//
+//  Created by JGBMACMINI01 on 14-11-21.
+//  Copyright (c) 2014年 JGBMACMINI01. All rights reserved.
+//
 
 #import <QuartzCore/QuartzCore.h>
 #import <Foundation/Foundation.h>
+#import <UIKit/UIGeometry.h>
 #import <UIKit/UIKit.h>
 
 #define TIME_ADD_CART       0.3f
@@ -9,8 +16,8 @@
 @interface XTAnimation : NSObject
 
 // in cell small big ;
-+ (CABasicAnimation *)smallBigBestInCell ;
-+ (void)smallBigBestInCell:(UIView *)view ;
++ (CABasicAnimation *)smallBigBestInCellWithSideRate:(CGFloat)rate duration:(CGFloat)duration ;
++ (void)smallBigBestInCell:(UIView *)view sideRate:(CGFloat)rate duration:(CGFloat)duration ;
 //永久闪烁的动画
 + (CABasicAnimation *)opacityForever_Animation:(float)time  ;
 //有闪烁次数的动画

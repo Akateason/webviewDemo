@@ -9,12 +9,9 @@
 #import "RightCtrller.h"
 #import "Header.h"
 #import "XTAnimation.h"
+#import "RightCell.h"
 
-static CGFloat  ROW_HEIGHT  = 85.0 ;
 int const       NUM_SHARE   = 3 ;
-
-static CGFloat  IMG_SIDE    = 40.0 ;
-
 
 @interface RightCtrller ()
 @property (strong, nonatomic) UITableView *tableView;
@@ -48,8 +45,8 @@ static CGFloat  IMG_SIDE    = 40.0 ;
     for (int i = 0; i < 3; i++)
     {
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:i inSection:0] ;
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath] ;
-        [XTAnimation smallBigBestInCell:cell] ;
+        RightCell *cell = (RightCell *)[self.tableView cellForRowAtIndexPath:indexPath] ;
+        [cell scaleAnimation] ;
     }
 }
 
@@ -101,38 +98,22 @@ static CGFloat  IMG_SIDE    = 40.0 ;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"Cell";
+    static NSString *cellIdentifier = @"RightCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    RightCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                      reuseIdentifier:cellIdentifier];
-        cell.backgroundColor = [UIColor clearColor];
-        cell.selectedBackgroundView = [[UIView alloc] init];
+        cell = [[RightCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                reuseIdentifier:cellIdentifier] ;
     }
     
     NSArray *titles = @[@"分享到微博", @"分享到微信", @"分享到朋友圈"];
     NSArray *images = @[@"share_weibo", @"share_weixin", @"share_friend"];
     
-    UIImageView *imageView = [[UIImageView alloc] init] ;
-    imageView.frame = CGRectMake(APPFRAME.size.width - IMG_SIDE - 20 , 0, IMG_SIDE, IMG_SIDE) ;
-    imageView.image = [UIImage imageNamed:images[indexPath.row]] ;
-    [cell addSubview:imageView] ;
+    cell.textStr = titles[indexPath.row] ;
+    cell.imgStr = images[indexPath.row] ;
     
-    UILabel *label = [[UILabel alloc] init] ;
-    CGRect labelRect = imageView.frame ;
-    labelRect.origin.x      = 0 ;
-    labelRect.size.width    = imageView.frame.origin.x - 20.0 ;
-    label.frame = labelRect ;
-    label.textAlignment = NSTextAlignmentRight ;
-    label.text = titles[indexPath.row] ;
-    label.textColor = [UIColor whiteColor] ;
-    label.highlightedTextColor = [UIColor lightGrayColor] ;
-    label.font = [UIFont systemFontOfSize:16.0] ;
-    [cell addSubview:label] ;
-    
-    return cell;
+    return cell ;
 }
 
 - (void)didReceiveMemoryWarning {

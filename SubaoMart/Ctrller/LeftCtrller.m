@@ -28,7 +28,7 @@ static CGFloat heightHead = 60.0f ;
 - (UIImageView *)headImage
 {
     if (!_headImage) {
-        _headImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, heightHead , heightHead )] ;
+        _headImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, heightHead , heightHead )] ;
         _headImage.image = [UIImage imageNamed:@"2"] ;
         _headImage.layer.cornerRadius = (heightHead) / 2.0 ;
         _headImage.layer.masksToBounds = YES ;
@@ -59,7 +59,7 @@ static CGFloat heightHead = 60.0f ;
     if (!_tableView)
     {
         UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, heightHead + flex)] ;
-
+        
         if (![self.headImage superview]) {
             [header addSubview:self.headImage] ;
         }
@@ -101,9 +101,9 @@ static CGFloat heightHead = 60.0f ;
 
 - (void)popupAnimaton
 {
-//    [XTAnimation animationRippleEffect:self.headImage] ;
-    [XTAnimation shakeRandomDirectionWithDuration:0.35 AndWithView:self.headImage] ;
-    [XTAnimation shakeRandomDirectionWithDuration:0.35 AndWithView:self.nameLabel] ;
+    static CGFloat durationShake = 0.56 ;
+    [XTAnimation shakeRandomDirectionWithDuration:durationShake AndWithView:self.headImage] ;
+    [XTAnimation shakeRandomDirectionWithDuration:durationShake AndWithView:self.nameLabel] ;
 }
 
 #pragma mark -
@@ -120,7 +120,7 @@ static CGFloat heightHead = 60.0f ;
                      }
                      completion:^(BOOL finished) {
                          if (finished) {
-                             [self loginWithIndex:indexPath.row] ;
+                             [self loginWithIndex:(int)indexPath.row] ;
                          }
                      }] ;
 

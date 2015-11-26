@@ -22,28 +22,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
-//    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7)
-//    {
-//        self.window.clipsToBounds = YES ;
-//        self.window.frame = CGRectMake(0, 20,self.window.frame.size.width,self.window.frame.size.height - 20) ;
-//        self.window.bounds = CGRectMake(0, 20, self.window.frame.size.width, self.window.frame.size.height) ;
-//    }
-
-    
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent] ;
-    [[UIApplication sharedApplication] keyWindow].tintColor = COLOR_MAIN ;
-
-    
-    //2 nav style
-    [[UINavigationBar appearance] setBarTintColor:COLOR_MAIN] ;
-    
-    //  nav word style
-    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}] ;
-    
-    //  status bar style
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]] ;
-    [[UINavigationBar appearance] setBackgroundColor:COLOR_MAIN] ;
 
 
     return YES;
