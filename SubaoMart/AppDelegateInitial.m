@@ -11,7 +11,8 @@
 #import "KeyChainHeader.h"
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
-//#import "MobClick.h"
+#import "WeiboSDK.h"
+#import "UMSocialSinaSSOHandler.h"
 
 @interface AppDelegateInitial ()
 @property (nonatomic,strong) NSDictionary *launchOptions ;
@@ -49,9 +50,6 @@
     //  weibo and weixin .
 //    [self weiboInitialization] ;
     
-    //  Umeng SDK Analytics
-//    [self UMAnalyticsInitialization] ;
-    
 }
 
 - (void)setMyStyleWithWindow:(UIWindow *)window
@@ -77,28 +75,19 @@
                             appSecret:WX_APPSECRET
                                   url:@"http://www.subaojiang.com"] ;
     
-//    [UMSocialSinaHandler openSSOWithRedirectURL:WB_REDIRECTURL] ;           //um第三方
-//    [UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:WB_REDIRECTURL] ; //weibo原生
+    [UMSocialSinaSSOHandler openNewSinaSSOWithRedirectURL:WB_REDIRECTURL] ; //weibo原生
     
     //由于苹果审核政策需求，建议大家对未安装客户端平台进行隐藏，在设置QQ、微信AppID之后调用下面的方法，
     [UMSocialConfig hiddenNotInstallPlatforms:@[UMShareToWechatSession,UMShareToWechatTimeline,UMShareToWechatFavorite]] ;
     [UMSocialConfig showNotInstallPlatforms:@[UMShareToSina,UMShareToWechatTimeline]] ;
 }
 
-/*
+
 - (void)weiboInitialization
 {
     //    [WeiboSDK enableDebugMode:YES] ;
-    [WeiboSDK registerApp:WB_APPKEY] ;
+//    [WeiboSDK registerApp:WB_APPKEY] ;
 }
 
-- (void)UMAnalyticsInitialization
-{
-    [MobClick startWithAppkey:UM_APPKEY reportPolicy:BATCH channelId:nil] ;
-    
-    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"] ;
-    [MobClick setAppVersion:version];
-}
-*/
 
 @end

@@ -12,6 +12,9 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+//@property (strong, nonatomic) NSString *wbtoken;
+//@property (strong, nonatomic) NSString *wbCurrentUserID;
+//@property (strong, nonatomic) NSString *wbRefreshToken;
 
 @end
 
