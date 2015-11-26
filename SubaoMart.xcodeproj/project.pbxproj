@@ -1,0 +1,672 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D729EF831BFD6C3B002DEAF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EF821BFD6C3B002DEAF7 /* main.m */; };
+		D729EF861BFD6C3C002DEAF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EF851BFD6C3C002DEAF7 /* AppDelegate.m */; };
+		D729EF8C1BFD6C3C002DEAF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D729EF8A1BFD6C3C002DEAF7 /* Main.storyboard */; };
+		D729EF911BFD6C3C002DEAF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D729EF8F1BFD6C3C002DEAF7 /* LaunchScreen.storyboard */; };
+		D729EF9C1BFD6C3C002DEAF7 /* SubaoMartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EF9B1BFD6C3C002DEAF7 /* SubaoMartTests.m */; };
+		D729EFA71BFD6C3C002DEAF7 /* SubaoMartUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFA61BFD6C3C002DEAF7 /* SubaoMartUITests.m */; };
+		D729EFB91BFD72CA002DEAF7 /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D729EFB61BFD72CA002DEAF7 /* AlipaySDK.bundle */; };
+		D729EFBA1BFD72CA002DEAF7 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D729EFB71BFD72CA002DEAF7 /* AlipaySDK.framework */; };
+		D729EFBB1BFD72CA002DEAF7 /* WemartSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D729EFB81BFD72CA002DEAF7 /* WemartSDK.framework */; };
+		D729EFBD1BFD7304002DEAF7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D729EFBC1BFD7304002DEAF7 /* SystemConfiguration.framework */; };
+		D729EFC01BFD7364002DEAF7 /* ShoppingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFBF1BFD7364002DEAF7 /* ShoppingCtrller.m */; };
+		D729EFCD1BFD9E37002DEAF7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFCC1BFD9E37002DEAF7 /* Base64.m */; };
+		D729EFD11BFDAFAA002DEAF7 /* UIImage+AddFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFD01BFDAFAA002DEAF7 /* UIImage+AddFunction.m */; };
+		D729EFDA1BFDD096002DEAF7 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFD51BFDD095002DEAF7 /* RECommonFunctions.m */; };
+		D729EFDB1BFDD096002DEAF7 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFD71BFDD095002DEAF7 /* RESideMenu.m */; };
+		D729EFDC1BFDD096002DEAF7 /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFD91BFDD095002DEAF7 /* UIViewController+RESideMenu.m */; };
+		D729EFDF1BFDD154002DEAF7 /* RootMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFDE1BFDD153002DEAF7 /* RootMenu.m */; };
+		D729EFE21BFDD1AC002DEAF7 /* LeftCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFE11BFDD1AC002DEAF7 /* LeftCtrller.m */; };
+		D729EFE81BFDE18C002DEAF7 /* RightCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFE71BFDE18C002DEAF7 /* RightCtrller.m */; };
+		D729EFEC1C056E25002DEAF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D729EFEB1C056E25002DEAF7 /* Assets.xcassets */; };
+		D729EFEE1C058859002DEAF7 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D729EFED1C058859002DEAF7 /* UserView.xib */; };
+		D729EFF11C05A601002DEAF7 /* XTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFF01C05A601002DEAF7 /* XTAnimation.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D729EF981BFD6C3C002DEAF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D729EF761BFD6C3B002DEAF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D729EF7D1BFD6C3B002DEAF7;
+			remoteInfo = SubaoMart;
+		};
+		D729EFA31BFD6C3C002DEAF7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D729EF761BFD6C3B002DEAF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D729EF7D1BFD6C3B002DEAF7;
+			remoteInfo = SubaoMart;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D729EF7E1BFD6C3B002DEAF7 /* SubaoMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubaoMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D729EF821BFD6C3B002DEAF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D729EF841BFD6C3C002DEAF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D729EF851BFD6C3C002DEAF7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D729EF8B1BFD6C3C002DEAF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D729EF901BFD6C3C002DEAF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D729EF921BFD6C3C002DEAF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D729EF971BFD6C3C002DEAF7 /* SubaoMartTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubaoMartTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D729EF9B1BFD6C3C002DEAF7 /* SubaoMartTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubaoMartTests.m; sourceTree = "<group>"; };
+		D729EF9D1BFD6C3C002DEAF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D729EFA21BFD6C3C002DEAF7 /* SubaoMartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SubaoMartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D729EFA61BFD6C3C002DEAF7 /* SubaoMartUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubaoMartUITests.m; sourceTree = "<group>"; };
+		D729EFA81BFD6C3C002DEAF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D729EFB61BFD72CA002DEAF7 /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
+		D729EFB71BFD72CA002DEAF7 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
+		D729EFB81BFD72CA002DEAF7 /* WemartSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WemartSDK.framework; sourceTree = "<group>"; };
+		D729EFBC1BFD7304002DEAF7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D729EFBE1BFD7364002DEAF7 /* ShoppingCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShoppingCtrller.h; path = Ctrller/ShoppingCtrller.h; sourceTree = "<group>"; };
+		D729EFBF1BFD7364002DEAF7 /* ShoppingCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShoppingCtrller.m; path = Ctrller/ShoppingCtrller.m; sourceTree = "<group>"; };
+		D729EFC41BFD7D10002DEAF7 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = SubaoMart/Header.h; sourceTree = "<group>"; };
+		D729EFCB1BFD9E37002DEAF7 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
+		D729EFCC1BFD9E37002DEAF7 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
+		D729EFCF1BFDAFAA002DEAF7 /* UIImage+AddFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AddFunction.h"; sourceTree = "<group>"; };
+		D729EFD01BFDAFAA002DEAF7 /* UIImage+AddFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AddFunction.m"; sourceTree = "<group>"; };
+		D729EFD41BFDD095002DEAF7 /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		D729EFD51BFDD095002DEAF7 /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		D729EFD61BFDD095002DEAF7 /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		D729EFD71BFDD095002DEAF7 /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		D729EFD81BFDD095002DEAF7 /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		D729EFD91BFDD095002DEAF7 /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		D729EFDD1BFDD153002DEAF7 /* RootMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootMenu.h; path = Ctrller/RootMenu.h; sourceTree = "<group>"; };
+		D729EFDE1BFDD153002DEAF7 /* RootMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootMenu.m; path = Ctrller/RootMenu.m; sourceTree = "<group>"; };
+		D729EFE01BFDD1AC002DEAF7 /* LeftCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftCtrller.h; path = Ctrller/LeftCtrller.h; sourceTree = "<group>"; };
+		D729EFE11BFDD1AC002DEAF7 /* LeftCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftCtrller.m; path = Ctrller/LeftCtrller.m; sourceTree = "<group>"; };
+		D729EFE61BFDE18C002DEAF7 /* RightCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightCtrller.h; path = Ctrller/RightCtrller.h; sourceTree = "<group>"; };
+		D729EFE71BFDE18C002DEAF7 /* RightCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightCtrller.m; path = Ctrller/RightCtrller.m; sourceTree = "<group>"; };
+		D729EFEB1C056E25002DEAF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D729EFED1C058859002DEAF7 /* UserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserView.xib; path = Ctrller/UserView.xib; sourceTree = "<group>"; };
+		D729EFEF1C05A601002DEAF7 /* XTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAnimation.h; sourceTree = "<group>"; };
+		D729EFF01C05A601002DEAF7 /* XTAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAnimation.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D729EF7B1BFD6C3B002DEAF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D729EFBD1BFD7304002DEAF7 /* SystemConfiguration.framework in Frameworks */,
+				D729EFBA1BFD72CA002DEAF7 /* AlipaySDK.framework in Frameworks */,
+				D729EFBB1BFD72CA002DEAF7 /* WemartSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D729EF941BFD6C3C002DEAF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D729EF9F1BFD6C3C002DEAF7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D729EF751BFD6C3B002DEAF7 = {
+			isa = PBXGroup;
+			children = (
+				D729EFC41BFD7D10002DEAF7 /* Header.h */,
+				D729EF801BFD6C3B002DEAF7 /* SubaoMart */,
+				D729EF9A1BFD6C3C002DEAF7 /* SubaoMartTests */,
+				D729EFA51BFD6C3C002DEAF7 /* SubaoMartUITests */,
+				D729EF7F1BFD6C3B002DEAF7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D729EF7F1BFD6C3B002DEAF7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D729EF7E1BFD6C3B002DEAF7 /* SubaoMart.app */,
+				D729EF971BFD6C3C002DEAF7 /* SubaoMartTests.xctest */,
+				D729EFA21BFD6C3C002DEAF7 /* SubaoMartUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D729EF801BFD6C3B002DEAF7 /* SubaoMart */ = {
+			isa = PBXGroup;
+			children = (
+				D729EF841BFD6C3C002DEAF7 /* AppDelegate.h */,
+				D729EF851BFD6C3C002DEAF7 /* AppDelegate.m */,
+				D729EFCE1BFDAFAA002DEAF7 /* Custom */,
+				D729EFC91BFD9E37002DEAF7 /* Help */,
+				D729EFC51BFD9D6F002DEAF7 /* Model */,
+				D729EFB51BFD72CA002DEAF7 /* Wemart */,
+				D729EFB41BFD7265002DEAF7 /* Controller */,
+				D729EF8A1BFD6C3C002DEAF7 /* Main.storyboard */,
+				D729EF8F1BFD6C3C002DEAF7 /* LaunchScreen.storyboard */,
+				D729EF921BFD6C3C002DEAF7 /* Info.plist */,
+				D729EFEB1C056E25002DEAF7 /* Assets.xcassets */,
+				D729EF811BFD6C3B002DEAF7 /* Supporting Files */,
+			);
+			path = SubaoMart;
+			sourceTree = "<group>";
+		};
+		D729EF811BFD6C3B002DEAF7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D729EFBC1BFD7304002DEAF7 /* SystemConfiguration.framework */,
+				D729EF821BFD6C3B002DEAF7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D729EF9A1BFD6C3C002DEAF7 /* SubaoMartTests */ = {
+			isa = PBXGroup;
+			children = (
+				D729EF9B1BFD6C3C002DEAF7 /* SubaoMartTests.m */,
+				D729EF9D1BFD6C3C002DEAF7 /* Info.plist */,
+			);
+			path = SubaoMartTests;
+			sourceTree = "<group>";
+		};
+		D729EFA51BFD6C3C002DEAF7 /* SubaoMartUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D729EFA61BFD6C3C002DEAF7 /* SubaoMartUITests.m */,
+				D729EFA81BFD6C3C002DEAF7 /* Info.plist */,
+			);
+			path = SubaoMartUITests;
+			sourceTree = "<group>";
+		};
+		D729EFB41BFD7265002DEAF7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D729EFDD1BFDD153002DEAF7 /* RootMenu.h */,
+				D729EFDE1BFDD153002DEAF7 /* RootMenu.m */,
+				D729EFE01BFDD1AC002DEAF7 /* LeftCtrller.h */,
+				D729EFE11BFDD1AC002DEAF7 /* LeftCtrller.m */,
+				D729EFED1C058859002DEAF7 /* UserView.xib */,
+				D729EFE61BFDE18C002DEAF7 /* RightCtrller.h */,
+				D729EFE71BFDE18C002DEAF7 /* RightCtrller.m */,
+				D729EFBE1BFD7364002DEAF7 /* ShoppingCtrller.h */,
+				D729EFBF1BFD7364002DEAF7 /* ShoppingCtrller.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		D729EFB51BFD72CA002DEAF7 /* Wemart */ = {
+			isa = PBXGroup;
+			children = (
+				D729EFB61BFD72CA002DEAF7 /* AlipaySDK.bundle */,
+				D729EFB71BFD72CA002DEAF7 /* AlipaySDK.framework */,
+				D729EFB81BFD72CA002DEAF7 /* WemartSDK.framework */,
+			);
+			path = Wemart;
+			sourceTree = "<group>";
+		};
+		D729EFC51BFD9D6F002DEAF7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		D729EFC91BFD9E37002DEAF7 /* Help */ = {
+			isa = PBXGroup;
+			children = (
+				D729EFD31BFDD095002DEAF7 /* RESideMenu */,
+				D729EFCA1BFD9E37002DEAF7 /* Base64 */,
+			);
+			path = Help;
+			sourceTree = "<group>";
+		};
+		D729EFCA1BFD9E37002DEAF7 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				D729EFCB1BFD9E37002DEAF7 /* Base64.h */,
+				D729EFCC1BFD9E37002DEAF7 /* Base64.m */,
+			);
+			path = Base64;
+			sourceTree = "<group>";
+		};
+		D729EFCE1BFDAFAA002DEAF7 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				D729EFEF1C05A601002DEAF7 /* XTAnimation.h */,
+				D729EFF01C05A601002DEAF7 /* XTAnimation.m */,
+				D729EFCF1BFDAFAA002DEAF7 /* UIImage+AddFunction.h */,
+				D729EFD01BFDAFAA002DEAF7 /* UIImage+AddFunction.m */,
+			);
+			path = Custom;
+			sourceTree = "<group>";
+		};
+		D729EFD31BFDD095002DEAF7 /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D729EFD41BFDD095002DEAF7 /* RECommonFunctions.h */,
+				D729EFD51BFDD095002DEAF7 /* RECommonFunctions.m */,
+				D729EFD61BFDD095002DEAF7 /* RESideMenu.h */,
+				D729EFD71BFDD095002DEAF7 /* RESideMenu.m */,
+				D729EFD81BFDD095002DEAF7 /* UIViewController+RESideMenu.h */,
+				D729EFD91BFDD095002DEAF7 /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D729EF7D1BFD6C3B002DEAF7 /* SubaoMart */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D729EFAB1BFD6C3C002DEAF7 /* Build configuration list for PBXNativeTarget "SubaoMart" */;
+			buildPhases = (
+				D729EF7A1BFD6C3B002DEAF7 /* Sources */,
+				D729EF7B1BFD6C3B002DEAF7 /* Frameworks */,
+				D729EF7C1BFD6C3B002DEAF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SubaoMart;
+			productName = SubaoMart;
+			productReference = D729EF7E1BFD6C3B002DEAF7 /* SubaoMart.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D729EF961BFD6C3C002DEAF7 /* SubaoMartTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D729EFAE1BFD6C3C002DEAF7 /* Build configuration list for PBXNativeTarget "SubaoMartTests" */;
+			buildPhases = (
+				D729EF931BFD6C3C002DEAF7 /* Sources */,
+				D729EF941BFD6C3C002DEAF7 /* Frameworks */,
+				D729EF951BFD6C3C002DEAF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D729EF991BFD6C3C002DEAF7 /* PBXTargetDependency */,
+			);
+			name = SubaoMartTests;
+			productName = SubaoMartTests;
+			productReference = D729EF971BFD6C3C002DEAF7 /* SubaoMartTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D729EFA11BFD6C3C002DEAF7 /* SubaoMartUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D729EFB11BFD6C3C002DEAF7 /* Build configuration list for PBXNativeTarget "SubaoMartUITests" */;
+			buildPhases = (
+				D729EF9E1BFD6C3C002DEAF7 /* Sources */,
+				D729EF9F1BFD6C3C002DEAF7 /* Frameworks */,
+				D729EFA01BFD6C3C002DEAF7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D729EFA41BFD6C3C002DEAF7 /* PBXTargetDependency */,
+			);
+			name = SubaoMartUITests;
+			productName = SubaoMartUITests;
+			productReference = D729EFA21BFD6C3C002DEAF7 /* SubaoMartUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D729EF761BFD6C3B002DEAF7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = teason;
+				TargetAttributes = {
+					D729EF7D1BFD6C3B002DEAF7 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					D729EF961BFD6C3C002DEAF7 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = D729EF7D1BFD6C3B002DEAF7;
+					};
+					D729EFA11BFD6C3C002DEAF7 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = D729EF7D1BFD6C3B002DEAF7;
+					};
+				};
+			};
+			buildConfigurationList = D729EF791BFD6C3B002DEAF7 /* Build configuration list for PBXProject "SubaoMart" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D729EF751BFD6C3B002DEAF7;
+			productRefGroup = D729EF7F1BFD6C3B002DEAF7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D729EF7D1BFD6C3B002DEAF7 /* SubaoMart */,
+				D729EF961BFD6C3C002DEAF7 /* SubaoMartTests */,
+				D729EFA11BFD6C3C002DEAF7 /* SubaoMartUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D729EF7C1BFD6C3B002DEAF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D729EF911BFD6C3C002DEAF7 /* LaunchScreen.storyboard in Resources */,
+				D729EFB91BFD72CA002DEAF7 /* AlipaySDK.bundle in Resources */,
+				D729EFEC1C056E25002DEAF7 /* Assets.xcassets in Resources */,
+				D729EF8C1BFD6C3C002DEAF7 /* Main.storyboard in Resources */,
+				D729EFEE1C058859002DEAF7 /* UserView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D729EF951BFD6C3C002DEAF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D729EFA01BFD6C3C002DEAF7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D729EF7A1BFD6C3B002DEAF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D729EFDB1BFDD096002DEAF7 /* RESideMenu.m in Sources */,
+				D729EF861BFD6C3C002DEAF7 /* AppDelegate.m in Sources */,
+				D729EFCD1BFD9E37002DEAF7 /* Base64.m in Sources */,
+				D729EFDF1BFDD154002DEAF7 /* RootMenu.m in Sources */,
+				D729EFD11BFDAFAA002DEAF7 /* UIImage+AddFunction.m in Sources */,
+				D729EF831BFD6C3B002DEAF7 /* main.m in Sources */,
+				D729EFE21BFDD1AC002DEAF7 /* LeftCtrller.m in Sources */,
+				D729EFC01BFD7364002DEAF7 /* ShoppingCtrller.m in Sources */,
+				D729EFDA1BFDD096002DEAF7 /* RECommonFunctions.m in Sources */,
+				D729EFDC1BFDD096002DEAF7 /* UIViewController+RESideMenu.m in Sources */,
+				D729EFF11C05A601002DEAF7 /* XTAnimation.m in Sources */,
+				D729EFE81BFDE18C002DEAF7 /* RightCtrller.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D729EF931BFD6C3C002DEAF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D729EF9C1BFD6C3C002DEAF7 /* SubaoMartTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D729EF9E1BFD6C3C002DEAF7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D729EFA71BFD6C3C002DEAF7 /* SubaoMartUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D729EF991BFD6C3C002DEAF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D729EF7D1BFD6C3B002DEAF7 /* SubaoMart */;
+			targetProxy = D729EF981BFD6C3C002DEAF7 /* PBXContainerItemProxy */;
+		};
+		D729EFA41BFD6C3C002DEAF7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D729EF7D1BFD6C3B002DEAF7 /* SubaoMart */;
+			targetProxy = D729EFA31BFD6C3C002DEAF7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D729EF8A1BFD6C3C002DEAF7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D729EF8B1BFD6C3C002DEAF7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D729EF8F1BFD6C3C002DEAF7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D729EF901BFD6C3C002DEAF7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D729EFA91BFD6C3C002DEAF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D729EFAA1BFD6C3C002DEAF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D729EFAC1BFD6C3C002DEAF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SubaoMart/Wemart",
+				);
+				INFOPLIST_FILE = SubaoMart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzz.SubaoMart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		D729EFAD1BFD6C3C002DEAF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SubaoMart/Wemart",
+				);
+				INFOPLIST_FILE = SubaoMart/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzz.SubaoMart;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		D729EFAF1BFD6C3C002DEAF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SubaoMartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzz.SubaoMartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SubaoMart.app/SubaoMart";
+			};
+			name = Debug;
+		};
+		D729EFB01BFD6C3C002DEAF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SubaoMartTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzz.SubaoMartTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SubaoMart.app/SubaoMart";
+			};
+			name = Release;
+		};
+		D729EFB21BFD6C3C002DEAF7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SubaoMartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzz.SubaoMartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SubaoMart;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		D729EFB31BFD6C3C002DEAF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SubaoMartUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = zzz.SubaoMartUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SubaoMart;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D729EF791BFD6C3B002DEAF7 /* Build configuration list for PBXProject "SubaoMart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D729EFA91BFD6C3C002DEAF7 /* Debug */,
+				D729EFAA1BFD6C3C002DEAF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D729EFAB1BFD6C3C002DEAF7 /* Build configuration list for PBXNativeTarget "SubaoMart" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D729EFAC1BFD6C3C002DEAF7 /* Debug */,
+				D729EFAD1BFD6C3C002DEAF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D729EFAE1BFD6C3C002DEAF7 /* Build configuration list for PBXNativeTarget "SubaoMartTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D729EFAF1BFD6C3C002DEAF7 /* Debug */,
+				D729EFB01BFD6C3C002DEAF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D729EFB11BFD6C3C002DEAF7 /* Build configuration list for PBXNativeTarget "SubaoMartUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D729EFB21BFD6C3C002DEAF7 /* Debug */,
+				D729EFB31BFD6C3C002DEAF7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D729EF761BFD6C3B002DEAF7 /* Project object */;
+}
