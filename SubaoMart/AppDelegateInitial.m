@@ -21,6 +21,7 @@
 @end
 
 @implementation AppDelegateInitial
+
 - (instancetype)initWithApplication:(UIApplication *)application
                             options:(NSDictionary *)launchOptions
                              window:(UIWindow *)window
@@ -49,7 +50,6 @@
     
     //  weibo and weixin .
 //    [self weiboInitialization] ;
-    
 }
 
 - (void)setMyStyleWithWindow:(UIWindow *)window
@@ -82,12 +82,10 @@
     [UMSocialConfig showNotInstallPlatforms:@[UMShareToSina,UMShareToWechatTimeline]] ;
 }
 
-
-- (void)weiboInitialization
-{
-    //    [WeiboSDK enableDebugMode:YES] ;
+//- (void)weiboInitialization
+//{
+//    //[WeiboSDK enableDebugMode:YES] ;
 //    [WeiboSDK registerApp:WB_APPKEY] ;
-}
-
+//}
 
 @end

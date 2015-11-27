@@ -12,11 +12,11 @@
 //友盟APP_KEY
 #define UM_APPKEY                   @"565681dc67e58e4d0e00014d"                 //sumart umeng .
 
-#define WX_APPKEY                   @"wx0782b6682297f346"
-#define WX_APPSECRET                @"16a0ed1dd4b3e9ed9ecb65aa36565d59"
+#define WX_APPKEY                   @"wxd521387c0b66efaa"
+#define WX_APPSECRET                @"d4624c36b6795d1d99dcf0547af5443d"
 
-#define WB_APPKEY                   @"2546810282"
-#define WB_APPSECRET                @"6418cb05c7f2a5ec9f46478825828b64"
+#define WB_APPKEY                   @"1634965927"
+#define WB_APPSECRET                @"360a37c962a65ee96b8b5189708c986e"
 #define WB_REDIRECTURL              @"http://sns.whalecloud.com/sina2/callback"
 
 //分享官网  速报酱
