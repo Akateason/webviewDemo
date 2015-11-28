@@ -11,6 +11,11 @@
 #import "ShoppingCtrller.h"
 #import "Header.h"
 #import "XTAnimation.h"
+#import "UMSocial.h"
+#import "ServerRequest.h"
+#import "User.h"
+#import "DigitInformation.h"
+#import "UIImageView+WebCache.h"
 
 int const      NUM_LOGIN  = 2 ;
 static CGFloat ROW_HEIGHT = 75.0 ;
@@ -29,7 +34,10 @@ static CGFloat heightHead = 60.0f ;
 {
     if (!_headImage) {
         _headImage = [[UIImageView alloc] initWithFrame:CGRectMake(20, 30, heightHead , heightHead )] ;
-        _headImage.image = [UIImage imageNamed:@"2"] ;
+
+        [_headImage sd_setImageWithURL:[NSURL URLWithString:G_USER.u_headpic]
+                      placeholderImage:[UIImage imageNamed:@"2"]] ;
+        
         _headImage.layer.cornerRadius = (heightHead) / 2.0 ;
         _headImage.layer.masksToBounds = YES ;
         _headImage.layer.borderWidth = 1.0f ;
@@ -45,10 +53,11 @@ static CGFloat heightHead = 60.0f ;
         _nameLabel = [[UILabel alloc] init] ;
         CGRect rectName = self.headImage.frame ;
         rectName.origin.x += ( 20 + self.headImage.frame.size.width ) ;
+        rectName.size.width = 200 ;
         _nameLabel.frame = rectName ;
-        _nameLabel.text = @"呵呵哒" ;
+        _nameLabel.text = !G_USER.u_id ? @"未登录" : G_USER.u_nickname ; 
         _nameLabel.textColor = [UIColor whiteColor] ;
-        _nameLabel.font = [UIFont systemFontOfSize:16.0] ;
+        _nameLabel.font = [UIFont boldSystemFontOfSize:17.0] ;
     }
     
     return _nameLabel ;
@@ -90,6 +99,14 @@ static CGFloat heightHead = 60.0f ;
     return _tableView ;
 }
 
+- (void)refreshUserInfo
+{
+    _nameLabel.text = !G_USER.u_id ? @"未登录" : G_USER.u_nickname ;
+    [_headImage sd_setImageWithURL:[NSURL URLWithString:G_USER.u_headpic]
+                  placeholderImage:[UIImage imageNamed:@"2"]] ;
+
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad] ;
@@ -108,7 +125,6 @@ static CGFloat heightHead = 60.0f ;
 
 #pragma mark -
 #pragma mark UITableView Delegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -131,25 +147,103 @@ static CGFloat heightHead = 60.0f ;
     switch (index) {
         case 0:
         {
-            // login 1
+            [self weiboLoginAction] ;
         }
             break;
         case 1:
         {
-            
+            [self weixinLoginAction] ;
         }
             break;
         default:
             break;
     }
-    
-    
 //    [self.sideMenuViewController hideMenuViewController];
 }
 
+- (void)weiboLoginAction
+{
+    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
+    
+    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+        
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            
+            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina] ;
+            
+            //得到的数据在回调Block对象形参respone的data属性
+            [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToSina
+                                                                 completion:^(UMSocialResponseEntity *response) {
+                NSLog(@"SnsInformation is %@",response.data);
+                
+                NSNumber *gender = [response.data objectForKey:@"gender"] ;
+                NSString *head   = [response.data objectForKey:@"profile_image_url"] ;
+                NSString *wbUid  = [response.data objectForKey:@"uid"] ;
+                NSString *desc   = [response.data objectForKey:@"description"] ;
+                
+                [ServerRequest loginUnitWithCategory:mode_WeiBo wxopenID:nil wxUnionID:nil nickName:snsAccount.userName gender:gender language:nil country:nil province:nil city:nil headpic:head wbuid:wbUid description:desc username:nil password:nil Success:^(id json) {
+                    
+                    ResultParsered *result = [[ResultParsered alloc] initWithDic:json] ;
+                    [User loginWithResult:result] ;
+                    
+                    [self refreshUserInfo] ;
+                    [self.tableView reloadData] ;
+                } fail:^{
+                    //                    dispatch_async(dispatch_get_main_queue(), ^{
+                    //                        [XTHudManager showWordHudWithTitle:WD_HUD_FAIL_RETRY] ;
+                    //                    }) ;
+                    NSLog(@"failed") ;
+                }] ;
+                
+            }];
+        }
+        
+    });
+
+}
+
+- (void)weixinLoginAction
+{
+    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToWechatSession];
+    
+    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
+        
+        if (response.responseCode == UMSResponseCodeSuccess) {
+            
+            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary]valueForKey:UMShareToWechatSession];
+            NSLog(@"username is %@, uid is %@, token is %@ url is %@",snsAccount.userName,snsAccount.usid,snsAccount.accessToken,snsAccount.iconURL);
+            
+            //得到的数据在回调Block对象形参respone的data属性
+            [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToWechatSession  completion:^(UMSocialResponseEntity *response){
+                NSLog(@"SnsInformation is %@",response.data);
+                
+                NSString *openID = [response.data objectForKey:@"openid"] ;
+                NSNumber *gender = [response.data objectForKey:@"gender"] ;
+                NSString *head   = [response.data objectForKey:@"profile_image_url"] ;
+                
+                [ServerRequest loginUnitWithCategory:mode_WeiXin wxopenID:openID wxUnionID:snsAccount.unionId nickName:snsAccount.userName gender:gender language:nil country:nil province:nil city:nil headpic:head wbuid:nil description:nil username:nil password:nil Success:^(id json) {
+                    
+                    ResultParsered *result = [[ResultParsered alloc] initWithDic:json] ;
+                    [User loginWithResult:result] ;
+
+                    [self refreshUserInfo] ;
+                    [self.tableView reloadData] ;
+                } fail:^{
+//                    dispatch_async(dispatch_get_main_queue(), ^{
+//                        [XTHudManager showWordHudWithTitle:WD_HUD_FAIL_RETRY] ;
+//                    }) ;
+                    NSLog(@"failed") ;
+                }] ;
+                
+            }];
+        }
+        
+    });
+}
+
+
 #pragma mark -
 #pragma mark UITableView Datasource
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return ROW_HEIGHT;

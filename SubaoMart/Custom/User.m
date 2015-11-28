@@ -8,6 +8,9 @@
 #import "DigitInformation.h"
 #import "User.h"
 #import "CommonFunc.h"
+#import "ResultParsered.h"
+#import "XTFileManager.h"
+#import "Header.h"
 
 @implementation User
 
@@ -62,7 +65,6 @@
     return result ;
 }
 
-
 //  manually setting KVO value Changed . 
 + (BOOL)automaticallyNotifiesObserversForKey:(NSString *)theKey
 {
@@ -114,15 +116,37 @@
     }
 }
 
-
-- (void)login
++ (void)loginWithResult:(ResultParsered *)result
 {
+    if (result.errCode) {
+        NSLog(@"err code : %@",result.message) ;
+        NSLog(@"登陆失败") ;
+        return;
+    }
     
+    G_USER = nil ; // remove current user
+    G_TOKEN = [result.info objectForKey:@"token"];
+    
+    dispatch_queue_t queue = dispatch_queue_create("saveAndLogin", NULL) ;
+    dispatch_async(queue, ^{
+        // get user info from server .
+        [[DigitInformation shareInstance] g_user] ;
+        NSString *homePath = NSHomeDirectory() ;
+        NSString *path = [homePath stringByAppendingPathComponent:PATH_TOKEN_SAVE] ;
+        [XTFileManager archiveTheObject:G_TOKEN AndPath:path] ;
+        NSLog(@"login SUCCESS .") ;
+    }) ;
 }
 
-- (void)logout
++ (void)logout
 {
-    
+    // exit my account
+    G_TOKEN         = nil ;
+    G_USER          = nil ;
+    // del the archive
+    NSString *homePath = NSHomeDirectory();
+    NSString *path = [homePath stringByAppendingPathComponent:PATH_TOKEN_SAVE];
+    [XTFileManager deleteFileWithFileName:path] ;
 }
 
 

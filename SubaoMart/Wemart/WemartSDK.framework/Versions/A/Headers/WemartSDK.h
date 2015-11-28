@@ -11,6 +11,6 @@
 
 @interface WemartSDK : NSObject
 
-+(BOOL)handleAppCallback:(NSURL *)url;
++ (BOOL)handleAppCallback:(NSURL *)url ;
 
 @end

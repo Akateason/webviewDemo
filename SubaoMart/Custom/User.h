@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class ResultParsered ;
+
 @interface User : NSObject
 
 @property (nonatomic)           int             u_id ;
@@ -20,7 +22,7 @@
 - (NSString *)getUserSex ;
 - (NSString *)getUserSexImageString ;
 
-- (void)login ;
-- (void)logout ;
++ (void)loginWithResult:(ResultParsered *)result ;
++ (void)logout ;
 
 @end

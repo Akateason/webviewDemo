@@ -19,16 +19,10 @@ typedef enum {
 
 @interface CommonFunc : NSObject
 
-#pragma mark - give app a Score
-+ (void)scoringMyApp ;
-
-#pragma mark --
-#pragma mark - save and login
-+ (void)logSussessedWithResult:(ResultParsered *)result
-             AndWithController:(UIViewController *)contoller ;
-+ (void)exitLog ;
-
-#pragma mark -- 男女切换  0无, 1 男 , 2 女
+#pragma mark -- 
+/*
+*** 男女切换  0无, 1 男 , 2 女
+**/
 + (NSString *)boyGirlNum2Str:(int)num ;
 + (int)boyGirlStr2Num:(NSString *)str ;
 

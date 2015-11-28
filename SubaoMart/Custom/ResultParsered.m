@@ -7,7 +7,7 @@
 //
 
 #import "ResultParsered.h"
-#import "CommonFunc.h"
+#import "User.h"
 
 @implementation ResultParsered
 
@@ -21,7 +21,7 @@
         if (_errCode == 10002)
         {
             // token失效
-            [CommonFunc exitLog] ;
+            [User logout] ;
         }
         _message = [dict objectForKey:@"message"] ;
         _info    = [dict objectForKey:@"info"] ;

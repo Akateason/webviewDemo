@@ -12,5 +12,5 @@
 @property (nonatomic, strong) NSString * initialURL;
 @property (nonatomic, strong) NSString * appScheme;
 
--(NSString *) getSharedData;
+- (NSString *) getSharedData;
 @end

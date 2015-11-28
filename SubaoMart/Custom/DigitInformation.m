@@ -8,10 +8,9 @@
 #import "ServerRequest.h"
 #import "XTFileManager.h"
 #import "Header.h"
-
+#import "User.h"
 
 static DigitInformation *instance ;
-static int timeCount = 0 ;
 
 @implementation DigitInformation
 
@@ -66,7 +65,16 @@ static int timeCount = 0 ;
     return _uuid ;
 }
 
-
+- (User *)g_user
+{
+    if (!_g_user) {
+        ResultParsered *result = [ServerRequest getMyIndexPersonalInfo] ;
+        if (!result) return nil ;
+        _g_user = [[User alloc] initWithDic:result.info] ;
+    }
+    
+    return _g_user ;
+}
 
 @end
 
