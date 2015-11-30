@@ -10,7 +10,7 @@
 #define SuBaoJiang_KeyChainHeader_h
 
 //友盟APP_KEY
-#define UM_APPKEY                   @"565681dc67e58e4d0e00014d"                 //sumart umeng .
+#define UM_APPKEY                   @"565681dc67e58e4d0e00014d"
 
 #define WX_APPKEY                   @"wxd521387c0b66efaa"
 #define WX_APPSECRET                @"d4624c36b6795d1d99dcf0547af5443d"

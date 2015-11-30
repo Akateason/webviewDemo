@@ -24,8 +24,7 @@
     self = [super initWithCoder:coder];
     if (self) {
 
-        NSString *userID = @"12" ;
-        NSString *wmode = @"app" ;
+        NSString *userID = @"125" ;
         
 //        NSString *sign = WEMART_APPSECRET ;
 //        NSString *sign = [rsa signTheDataSHA1WithRSA:WEMART_APPSECRET] ;
@@ -35,7 +34,7 @@
         self.appScheme = appScheme;
         
 //        NSString *url = [NSString stringWithFormat:@"%@&wmode=%@&appId=%@&userId=%@&sign=%@",URL_SHOP_WEMART,wmode,WEMART_APPID,userID,sign] ;
-        NSString *url = [NSString stringWithFormat:@"%@&wmode=%@&appId=%@&userId=%@",URL_SHOP_WEMART,wmode,WEMART_APPID,userID] ;
+        NSString *url = [NSString stringWithFormat:@"%@&appId=%@&userId=%@",URL_SHOP_WEMART,WEMART_APPID,userID] ;
         
         NSLog(@"url : %@",url) ;
         self.initialURL = url ;
@@ -55,15 +54,12 @@
 #pragma mark - web view delegate
 - (void) webViewDidFinishLoad:(UIWebView *)webView
 {
-//    NSLog(@"webViewDidFinishLoad");
-    
     NSLog(@"get share data : %@",[self getSharedData]) ;
-
 }
 
 - (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-//    NSLog(@"didFailLoadWithError:%@", error);
+    NSLog(@"didFailLoadWithError:%@", error);
 }
 
 //判断用户点击类型
