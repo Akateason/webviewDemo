@@ -8,7 +8,6 @@
 
 #import "LeftCtrller.h"
 #import "UIViewController+RESideMenu.h"
-#import "ShoppingCtrller.h"
 #import "Header.h"
 #import "XTAnimation.h"
 #import "UMSocial.h"
@@ -20,6 +19,7 @@
 int const      NUM_LOGIN  = 2 ;
 static CGFloat ROW_HEIGHT = 75.0 ;
 static CGFloat heightHead = 60.0f ;
+
 #define        flex         APPFRAME.size.height / 2.0 - heightHead / 2.0       // 150.0f ;
 
 @interface LeftCtrller ()

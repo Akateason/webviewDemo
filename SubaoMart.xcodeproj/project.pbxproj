@@ -34,6 +34,8 @@
 		D70363D71C086958009EE089 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363C51C086958009EE089 /* UIImageView+HighlightedWebCache.m */; };
 		D70363D81C086958009EE089 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363C71C086958009EE089 /* UIImageView+WebCache.m */; };
 		D70363D91C086958009EE089 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363C91C086958009EE089 /* UIView+WebCacheOperation.m */; };
+		D70363DC1C0C48E5009EE089 /* WemartMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363DB1C0C48E5009EE089 /* WemartMarketViewController.m */; };
+		D70363DF1C0C4CC2009EE089 /* NavCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363DE1C0C4CC2009EE089 /* NavCtrller.m */; };
 		D729EF831BFD6C3B002DEAF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EF821BFD6C3B002DEAF7 /* main.m */; };
 		D729EF861BFD6C3C002DEAF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EF851BFD6C3C002DEAF7 /* AppDelegate.m */; };
 		D729EF8C1BFD6C3C002DEAF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D729EF8A1BFD6C3C002DEAF7 /* Main.storyboard */; };
@@ -44,7 +46,6 @@
 		D729EFBA1BFD72CA002DEAF7 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D729EFB71BFD72CA002DEAF7 /* AlipaySDK.framework */; };
 		D729EFBB1BFD72CA002DEAF7 /* WemartSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D729EFB81BFD72CA002DEAF7 /* WemartSDK.framework */; };
 		D729EFBD1BFD7304002DEAF7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D729EFBC1BFD7304002DEAF7 /* SystemConfiguration.framework */; };
-		D729EFC01BFD7364002DEAF7 /* ShoppingCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFBF1BFD7364002DEAF7 /* ShoppingCtrller.m */; };
 		D729EFCD1BFD9E37002DEAF7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFCC1BFD9E37002DEAF7 /* Base64.m */; };
 		D729EFD11BFDAFAA002DEAF7 /* UIImage+AddFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFD01BFDAFAA002DEAF7 /* UIImage+AddFunction.m */; };
 		D729EFDA1BFDD096002DEAF7 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFD51BFDD095002DEAF7 /* RECommonFunctions.m */; };
@@ -154,6 +155,10 @@
 		D70363C71C086958009EE089 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		D70363C81C086958009EE089 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		D70363C91C086958009EE089 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		D70363DA1C0C48E5009EE089 /* WemartMarketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WemartMarketViewController.h; path = Wemart/WemartMarketViewController.h; sourceTree = "<group>"; };
+		D70363DB1C0C48E5009EE089 /* WemartMarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WemartMarketViewController.m; path = Wemart/WemartMarketViewController.m; sourceTree = "<group>"; };
+		D70363DD1C0C4CC2009EE089 /* NavCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavCtrller.h; path = Ctrller/NavCtrller.h; sourceTree = "<group>"; };
+		D70363DE1C0C4CC2009EE089 /* NavCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavCtrller.m; path = Ctrller/NavCtrller.m; sourceTree = "<group>"; };
 		D729EF7E1BFD6C3B002DEAF7 /* SubaoMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubaoMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D729EF821BFD6C3B002DEAF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D729EF841BFD6C3C002DEAF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,8 +176,6 @@
 		D729EFB71BFD72CA002DEAF7 /* AlipaySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlipaySDK.framework; sourceTree = "<group>"; };
 		D729EFB81BFD72CA002DEAF7 /* WemartSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WemartSDK.framework; sourceTree = "<group>"; };
 		D729EFBC1BFD7304002DEAF7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D729EFBE1BFD7364002DEAF7 /* ShoppingCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShoppingCtrller.h; path = Ctrller/ShoppingCtrller.h; sourceTree = "<group>"; };
-		D729EFBF1BFD7364002DEAF7 /* ShoppingCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShoppingCtrller.m; path = Ctrller/ShoppingCtrller.m; sourceTree = "<group>"; };
 		D729EFC41BFD7D10002DEAF7 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = SubaoMart/Header.h; sourceTree = "<group>"; };
 		D729EFCB1BFD9E37002DEAF7 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
 		D729EFCC1BFD9E37002DEAF7 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
@@ -461,8 +464,10 @@
 				D729EFE71BFDE18C002DEAF7 /* RightCtrller.m */,
 				D729EFF21C06A9D1002DEAF7 /* RightCell.h */,
 				D729EFF31C06A9D1002DEAF7 /* RightCell.m */,
-				D729EFBE1BFD7364002DEAF7 /* ShoppingCtrller.h */,
-				D729EFBF1BFD7364002DEAF7 /* ShoppingCtrller.m */,
+				D70363DD1C0C4CC2009EE089 /* NavCtrller.h */,
+				D70363DE1C0C4CC2009EE089 /* NavCtrller.m */,
+				D70363DA1C0C48E5009EE089 /* WemartMarketViewController.h */,
+				D70363DB1C0C48E5009EE089 /* WemartMarketViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -879,9 +884,9 @@
 				D729EFD11BFDAFAA002DEAF7 /* UIImage+AddFunction.m in Sources */,
 				D703639F1C083DF5009EE089 /* User.m in Sources */,
 				D703639C1C08356E009EE089 /* CommonFunc.m in Sources */,
+				D70363DF1C0C4CC2009EE089 /* NavCtrller.m in Sources */,
 				D729EF831BFD6C3B002DEAF7 /* main.m in Sources */,
 				D729EFE21BFDD1AC002DEAF7 /* LeftCtrller.m in Sources */,
-				D729EFC01BFD7364002DEAF7 /* ShoppingCtrller.m in Sources */,
 				D70363D01C086958009EE089 /* SDWebImageDownloaderOperation.m in Sources */,
 				D729EFDA1BFDD096002DEAF7 /* RECommonFunctions.m in Sources */,
 				D729EFF81C06BDBA002DEAF7 /* AppDelegateInitial.m in Sources */,
@@ -894,6 +899,7 @@
 				D729EFDC1BFDD096002DEAF7 /* UIViewController+RESideMenu.m in Sources */,
 				D729EFF11C05A601002DEAF7 /* XTAnimation.m in Sources */,
 				D729EFE81BFDE18C002DEAF7 /* RightCtrller.m in Sources */,
+				D70363DC1C0C48E5009EE089 /* WemartMarketViewController.m in Sources */,
 				D70363D91C086958009EE089 /* UIView+WebCacheOperation.m in Sources */,
 				D70363D71C086958009EE089 /* UIImageView+HighlightedWebCache.m in Sources */,
 				D729EFF41C06A9D1002DEAF7 /* RightCell.m in Sources */,

@@ -9,8 +9,9 @@
 #import "RootMenu.h"
 #import "LeftCtrller.h"
 #import "RightCtrller.h"
-#import "ShoppingCtrller.h"
 #import "Header.h"
+#import "NavCtrller.h"
+
 
 @interface RootMenu ()
 @property (nonatomic,strong) LeftCtrller    *leftC  ;
@@ -25,7 +26,7 @@
     if ([number intValue] == 1) {
         [self presentLeftMenuViewController] ;
     }
-    else {
+    else if ([number intValue] == 2) {
         [self presentRightMenuViewController] ;
     }
 }
@@ -57,7 +58,7 @@
     self.contentViewShadowRadius = 12;
     self.contentViewShadowEnabled = YES;
     
-    self.contentViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"contentNavCtrller"] ;
+    self.contentViewController  = [[NavCtrller alloc] init] ;
     self.leftC = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftCtrller"] ;
     self.leftMenuViewController = self.leftC ;
     self.rightC = [self.storyboard instantiateViewControllerWithIdentifier:@"RightCtrller"] ;
