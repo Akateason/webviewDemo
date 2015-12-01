@@ -9,16 +9,19 @@
 #import "XTFileManager.h"
 #import "Header.h"
 #import "User.h"
+#import "WXApi.h"
 
 static DigitInformation *instance ;
+static dispatch_once_t  onceToken ;
 
 @implementation DigitInformation
 
 + (DigitInformation *)shareInstance
 {
-    if (instance == nil) {
-        instance = [[[self class] alloc] init];
-    }
+    dispatch_once(&onceToken, ^{
+        instance = [[DigitInformation alloc] init];
+    });
+
     return instance;
 }
 
@@ -74,6 +77,13 @@ static DigitInformation *instance ;
     }
     
     return _g_user ;
+}
+
+- (BOOL)g_checkSwitch
+{
+    _g_checkSwitch = [WXApi isWXAppInstalled] ;
+
+    return _g_checkSwitch ;
 }
 
 @end

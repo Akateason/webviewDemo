@@ -124,7 +124,11 @@
         return;
     }
     
-    G_USER = nil ; // remove current user
+    // remove current info .
+    G_TOKEN         = nil ;
+    G_USER          = nil ;
+    G_BUY_LINKS     = nil ;
+    
     G_TOKEN = [result.info objectForKey:@"token"];
     
     dispatch_queue_t queue = dispatch_queue_create("saveAndLogin", NULL) ;

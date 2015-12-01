@@ -11,6 +11,7 @@
 #import "RightCtrller.h"
 #import "Header.h"
 #import "NavCtrller.h"
+#import "DigitInformation.h"
 
 
 @interface RootMenu ()
@@ -51,6 +52,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib] ;
+    
     self.menuPreferredStatusBarStyle = UIStatusBarStyleLightContent;
     self.contentViewShadowColor = [UIColor blackColor];
     self.contentViewShadowOffset = CGSizeMake(1, 1);
@@ -59,17 +62,23 @@
     self.contentViewShadowEnabled = YES;
     
     self.contentViewController  = [[NavCtrller alloc] init] ;
+    self.backgroundImage = [UIImage imageNamed:@"back3.jpg"];
+    
     self.leftC = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftCtrller"] ;
     self.leftMenuViewController = self.leftC ;
     self.rightC = [self.storyboard instantiateViewControllerWithIdentifier:@"RightCtrller"] ;
     self.rightMenuViewController = self.rightC ;
-    self.backgroundImage = [UIImage imageNamed:@"back3.jpg"];
+    
     self.delegate = self ;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view
+    
+    self.panGestureEnabled = G_CHECK_SWITCH ;
+    
 }
 
 - (void)didReceiveMemoryWarning {

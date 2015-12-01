@@ -36,6 +36,8 @@
 		D70363D91C086958009EE089 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363C91C086958009EE089 /* UIView+WebCacheOperation.m */; };
 		D70363DC1C0C48E5009EE089 /* WemartMarketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363DB1C0C48E5009EE089 /* WemartMarketViewController.m */; };
 		D70363DF1C0C4CC2009EE089 /* NavCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363DE1C0C4CC2009EE089 /* NavCtrller.m */; };
+		D70363E21C0D3C90009EE089 /* ShareUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363E11C0D3C90009EE089 /* ShareUtils.m */; };
+		D70363E51C0D4DC3009EE089 /* WemartProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363E41C0D4DC3009EE089 /* WemartProduct.m */; };
 		D729EF831BFD6C3B002DEAF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EF821BFD6C3B002DEAF7 /* main.m */; };
 		D729EF861BFD6C3C002DEAF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EF851BFD6C3C002DEAF7 /* AppDelegate.m */; };
 		D729EF8C1BFD6C3C002DEAF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D729EF8A1BFD6C3C002DEAF7 /* Main.storyboard */; };
@@ -46,7 +48,6 @@
 		D729EFBA1BFD72CA002DEAF7 /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D729EFB71BFD72CA002DEAF7 /* AlipaySDK.framework */; };
 		D729EFBB1BFD72CA002DEAF7 /* WemartSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D729EFB81BFD72CA002DEAF7 /* WemartSDK.framework */; };
 		D729EFBD1BFD7304002DEAF7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D729EFBC1BFD7304002DEAF7 /* SystemConfiguration.framework */; };
-		D729EFCD1BFD9E37002DEAF7 /* Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFCC1BFD9E37002DEAF7 /* Base64.m */; };
 		D729EFD11BFDAFAA002DEAF7 /* UIImage+AddFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFD01BFDAFAA002DEAF7 /* UIImage+AddFunction.m */; };
 		D729EFDA1BFDD096002DEAF7 /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFD51BFDD095002DEAF7 /* RECommonFunctions.m */; };
 		D729EFDB1BFDD096002DEAF7 /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFD71BFDD095002DEAF7 /* RESideMenu.m */; };
@@ -55,7 +56,6 @@
 		D729EFE21BFDD1AC002DEAF7 /* LeftCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFE11BFDD1AC002DEAF7 /* LeftCtrller.m */; };
 		D729EFE81BFDE18C002DEAF7 /* RightCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFE71BFDE18C002DEAF7 /* RightCtrller.m */; };
 		D729EFEC1C056E25002DEAF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D729EFEB1C056E25002DEAF7 /* Assets.xcassets */; };
-		D729EFEE1C058859002DEAF7 /* UserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D729EFED1C058859002DEAF7 /* UserView.xib */; };
 		D729EFF11C05A601002DEAF7 /* XTAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFF01C05A601002DEAF7 /* XTAnimation.m */; };
 		D729EFF41C06A9D1002DEAF7 /* RightCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFF31C06A9D1002DEAF7 /* RightCell.m */; };
 		D729EFF81C06BDBA002DEAF7 /* AppDelegateInitial.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EFF71C06BDBA002DEAF7 /* AppDelegateInitial.m */; };
@@ -159,6 +159,10 @@
 		D70363DB1C0C48E5009EE089 /* WemartMarketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WemartMarketViewController.m; path = Wemart/WemartMarketViewController.m; sourceTree = "<group>"; };
 		D70363DD1C0C4CC2009EE089 /* NavCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NavCtrller.h; path = Ctrller/NavCtrller.h; sourceTree = "<group>"; };
 		D70363DE1C0C4CC2009EE089 /* NavCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NavCtrller.m; path = Ctrller/NavCtrller.m; sourceTree = "<group>"; };
+		D70363E01C0D3C90009EE089 /* ShareUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareUtils.h; sourceTree = "<group>"; };
+		D70363E11C0D3C90009EE089 /* ShareUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareUtils.m; sourceTree = "<group>"; };
+		D70363E31C0D4DC3009EE089 /* WemartProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WemartProduct.h; path = Model/WemartProduct.h; sourceTree = "<group>"; };
+		D70363E41C0D4DC3009EE089 /* WemartProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WemartProduct.m; path = Model/WemartProduct.m; sourceTree = "<group>"; };
 		D729EF7E1BFD6C3B002DEAF7 /* SubaoMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubaoMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D729EF821BFD6C3B002DEAF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D729EF841BFD6C3C002DEAF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -177,8 +181,6 @@
 		D729EFB81BFD72CA002DEAF7 /* WemartSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WemartSDK.framework; sourceTree = "<group>"; };
 		D729EFBC1BFD7304002DEAF7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D729EFC41BFD7D10002DEAF7 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Header.h; path = SubaoMart/Header.h; sourceTree = "<group>"; };
-		D729EFCB1BFD9E37002DEAF7 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64.h; sourceTree = "<group>"; };
-		D729EFCC1BFD9E37002DEAF7 /* Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Base64.m; sourceTree = "<group>"; };
 		D729EFCF1BFDAFAA002DEAF7 /* UIImage+AddFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AddFunction.h"; sourceTree = "<group>"; };
 		D729EFD01BFDAFAA002DEAF7 /* UIImage+AddFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AddFunction.m"; sourceTree = "<group>"; };
 		D729EFD41BFDD095002DEAF7 /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
@@ -194,7 +196,6 @@
 		D729EFE61BFDE18C002DEAF7 /* RightCtrller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightCtrller.h; path = Ctrller/RightCtrller.h; sourceTree = "<group>"; };
 		D729EFE71BFDE18C002DEAF7 /* RightCtrller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RightCtrller.m; path = Ctrller/RightCtrller.m; sourceTree = "<group>"; };
 		D729EFEB1C056E25002DEAF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D729EFED1C058859002DEAF7 /* UserView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UserView.xib; path = Ctrller/UserView.xib; sourceTree = "<group>"; };
 		D729EFEF1C05A601002DEAF7 /* XTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTAnimation.h; sourceTree = "<group>"; };
 		D729EFF01C05A601002DEAF7 /* XTAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTAnimation.m; sourceTree = "<group>"; };
 		D729EFF21C06A9D1002DEAF7 /* RightCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RightCell.h; path = Ctrller/RightCell.h; sourceTree = "<group>"; };
@@ -265,8 +266,8 @@
 		D729F0541C07142F002DEAF7 /* WeiboUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiboUser.h; sourceTree = "<group>"; };
 		D729F1D61C071E69002DEAF7 /* ServerRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRequest.h; sourceTree = "<group>"; };
 		D729F1D71C071E69002DEAF7 /* ServerRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRequest.m; sourceTree = "<group>"; };
-		D729F1D91C071E9A002DEAF7 /* PublicEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicEnum.h; sourceTree = "<group>"; };
-		D729F28A1C07FF35002DEAF7 /* UrlRequestHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UrlRequestHeader.h; sourceTree = "<group>"; };
+		D729F1D91C071E9A002DEAF7 /* PublicEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PublicEnum.h; path = SubaoMart/Custom/PublicEnum.h; sourceTree = "<group>"; };
+		D729F28A1C07FF35002DEAF7 /* UrlRequestHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UrlRequestHeader.h; path = SubaoMart/Custom/UrlRequestHeader.h; sourceTree = "<group>"; };
 		EC69837A328ADFB4D80B84E1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -379,6 +380,8 @@
 			children = (
 				D729EFC41BFD7D10002DEAF7 /* Header.h */,
 				D729EFF51C06BAAC002DEAF7 /* KeyChainHeader.h */,
+				D729F28A1C07FF35002DEAF7 /* UrlRequestHeader.h */,
+				D729F1D91C071E9A002DEAF7 /* PublicEnum.h */,
 				D729EF801BFD6C3B002DEAF7 /* SubaoMart */,
 				D729EF9A1BFD6C3C002DEAF7 /* SubaoMartTests */,
 				D729EFA51BFD6C3C002DEAF7 /* SubaoMartUITests */,
@@ -459,7 +462,6 @@
 				D729EFDE1BFDD153002DEAF7 /* RootMenu.m */,
 				D729EFE01BFDD1AC002DEAF7 /* LeftCtrller.h */,
 				D729EFE11BFDD1AC002DEAF7 /* LeftCtrller.m */,
-				D729EFED1C058859002DEAF7 /* UserView.xib */,
 				D729EFE61BFDE18C002DEAF7 /* RightCtrller.h */,
 				D729EFE71BFDE18C002DEAF7 /* RightCtrller.m */,
 				D729EFF21C06A9D1002DEAF7 /* RightCell.h */,
@@ -486,6 +488,8 @@
 		D729EFC51BFD9D6F002DEAF7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D70363E31C0D4DC3009EE089 /* WemartProduct.h */,
+				D70363E41C0D4DC3009EE089 /* WemartProduct.m */,
 				D70363911C083289009EE089 /* ResultParsered.h */,
 				D70363921C083289009EE089 /* ResultParsered.m */,
 			);
@@ -502,18 +506,8 @@
 				D729EFF91C06C114002DEAF7 /* UMSocial_Sdk_4.3 */,
 				D729F0141C06C114002DEAF7 /* UMSocial_Sdk_Extra_Frameworks */,
 				D729EFD31BFDD095002DEAF7 /* RESideMenu */,
-				D729EFCA1BFD9E37002DEAF7 /* Base64 */,
 			);
 			path = Help;
-			sourceTree = "<group>";
-		};
-		D729EFCA1BFD9E37002DEAF7 /* Base64 */ = {
-			isa = PBXGroup;
-			children = (
-				D729EFCB1BFD9E37002DEAF7 /* Base64.h */,
-				D729EFCC1BFD9E37002DEAF7 /* Base64.m */,
-			);
-			path = Base64;
 			sourceTree = "<group>";
 		};
 		D729EFCE1BFDAFAA002DEAF7 /* Custom */ = {
@@ -521,12 +515,12 @@
 			children = (
 				D703639D1C083DF5009EE089 /* User.h */,
 				D703639E1C083DF5009EE089 /* User.m */,
+				D70363E01C0D3C90009EE089 /* ShareUtils.h */,
+				D70363E11C0D3C90009EE089 /* ShareUtils.m */,
 				D70363941C083316009EE089 /* DigitInformation.h */,
 				D70363951C083316009EE089 /* DigitInformation.m */,
 				D703639A1C08356E009EE089 /* CommonFunc.h */,
 				D703639B1C08356E009EE089 /* CommonFunc.m */,
-				D729F28A1C07FF35002DEAF7 /* UrlRequestHeader.h */,
-				D729F1D91C071E9A002DEAF7 /* PublicEnum.h */,
 				D729F1D61C071E69002DEAF7 /* ServerRequest.h */,
 				D729F1D71C071E69002DEAF7 /* ServerRequest.m */,
 				D70363971C0833EC009EE089 /* XTFileManager.h */,
@@ -792,7 +786,6 @@
 				D729F02E1C06C115002DEAF7 /* UMSCommentInputControlleriPad.xib in Resources */,
 				D729F0561C07142F002DEAF7 /* WeiboSDK.bundle in Resources */,
 				D729EF8C1BFD6C3C002DEAF7 /* Main.storyboard in Resources */,
-				D729EFEE1C058859002DEAF7 /* UserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -871,7 +864,6 @@
 				D729EF861BFD6C3C002DEAF7 /* AppDelegate.m in Sources */,
 				D729F1D81C071E69002DEAF7 /* ServerRequest.m in Sources */,
 				D70363991C0833EC009EE089 /* XTFileManager.m in Sources */,
-				D729EFCD1BFD9E37002DEAF7 /* Base64.m in Sources */,
 				D70363961C083316009EE089 /* DigitInformation.m in Sources */,
 				D70363CD1C086958009EE089 /* SDWebImageCompat.m in Sources */,
 				D70363CC1C086958009EE089 /* SDImageCache.m in Sources */,
@@ -884,6 +876,7 @@
 				D729EFD11BFDAFAA002DEAF7 /* UIImage+AddFunction.m in Sources */,
 				D703639F1C083DF5009EE089 /* User.m in Sources */,
 				D703639C1C08356E009EE089 /* CommonFunc.m in Sources */,
+				D70363E51C0D4DC3009EE089 /* WemartProduct.m in Sources */,
 				D70363DF1C0C4CC2009EE089 /* NavCtrller.m in Sources */,
 				D729EF831BFD6C3B002DEAF7 /* main.m in Sources */,
 				D729EFE21BFDD1AC002DEAF7 /* LeftCtrller.m in Sources */,
@@ -891,6 +884,7 @@
 				D729EFDA1BFDD096002DEAF7 /* RECommonFunctions.m in Sources */,
 				D729EFF81C06BDBA002DEAF7 /* AppDelegateInitial.m in Sources */,
 				D70363D21C086958009EE089 /* SDWebImagePrefetcher.m in Sources */,
+				D70363E21C0D3C90009EE089 /* ShareUtils.m in Sources */,
 				D70363D61C086958009EE089 /* UIImage+WebP.m in Sources */,
 				D70363D11C086958009EE089 /* SDWebImageManager.m in Sources */,
 				D70363CB1C086958009EE089 /* NSData+ImageContentType.m in Sources */,

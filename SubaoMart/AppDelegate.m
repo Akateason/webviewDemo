@@ -12,9 +12,11 @@
 #import "AppDelegateInitial.h"
 #import "UIImage+AddFunction.h"
 #import <WemartSDK/WemartSDK.h>
-//#import "WeiboSDK.h"
+#import "WeiboSDK.h"
+#import "ServerRequest.h"
+#import "User.h"
 
-@interface AppDelegate () //<WeiboSDKDelegate>
+@interface AppDelegate () <WeiboSDKDelegate>
 
 @end
 
@@ -36,12 +38,12 @@
     BOOL result = [UMSocialSnsService handleOpenURL:url] ;
     if (result == FALSE) {
         //调用其他SDK，例如新浪微博SDK等
-//        if ([url.absoluteString hasPrefix:@"wb"]) {
-//            return [WeiboSDK handleOpenURL:url delegate:self] ;
-//        }
-//        else if ([url.absoluteString hasPrefix:@"Su"]) {
+        if ([url.absoluteString hasPrefix:@"wb"]) {
+            return [WeiboSDK handleOpenURL:url delegate:self] ;
+        }
+        else if ([url.absoluteString hasPrefix:@"Su"]) {
             return [WemartSDK handleAppCallback:url] ;
-//        }
+        }
     }
     
     return result ;
@@ -54,13 +56,13 @@
 {
     BOOL result = [UMSocialSnsService handleOpenURL:url];
     if (result == FALSE) {
-//        //调用其他SDK，例如新浪微博SDK等
-//        if ([url.absoluteString hasPrefix:@"wb"]) {
-//            return [WeiboSDK handleOpenURL:url delegate:self] ;
-//        }
-//        else if ([url.absoluteString hasPrefix:@"Su"]) {
+        //调用其他SDK，例如新浪微博SDK等
+        if ([url.absoluteString hasPrefix:@"wb"]) {
+            return [WeiboSDK handleOpenURL:url delegate:self] ;
+        }
+        else if ([url.absoluteString hasPrefix:@"Su"]) {
             return [WemartSDK handleAppCallback:url] ;
-//        }
+        }
     }
     
     return result ;
@@ -69,7 +71,7 @@
 
 #pragma mark --
 #pragma mark - Weibo
-/*
+
 - (void)didReceiveWeiboRequest:(WBBaseRequest *)request
 {
     
@@ -88,6 +90,7 @@
         if (userID) {
             self.wbCurrentUserID = userID;
         }
+        /*
         dispatch_async(dispatch_get_main_queue(), ^{
             if (sendMessageToWeiboResponse.statusCode == WeiboSDKResponseStatusCodeSuccess)
             {
@@ -96,6 +99,7 @@
             [self.postSubaoCtrller shareArticleNow] ;
             [self.multyPostCtrller shareArticleNow] ;
         }) ;
+        */
     }
     else if ([response isKindOfClass:WBAuthorizeResponse.class])
     {
@@ -134,18 +138,17 @@
                                      Success:^(id json) {
                                          
                                          ResultParsered *result = [[ResultParsered alloc] initWithDic:json] ;
-                                         [CommonFunc logSussessedWithResult:result
-                                                          AndWithController:self.thirdLoginCtrller] ;
-                                         [CommonFunc bindWithBindMode:mode_weibo] ;
+                                         [User loginWithResult:result] ;
                                          
+                                         [self.leftctrller refreshUserInfo] ;
                                      } fail:^{
-                                         dispatch_async(dispatch_get_main_queue(), ^{
-                                             [XTHudManager showWordHudWithTitle:WD_HUD_FAIL_RETRY] ;
-                                         }) ;
+//                                         dispatch_async(dispatch_get_main_queue(), ^{
+//                                             [XTHudManager showWordHudWithTitle:WD_HUD_FAIL_RETRY] ;
+//                                         }) ;
                                      }] ;
     }
 }
-*/
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

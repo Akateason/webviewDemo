@@ -45,6 +45,19 @@
     return [G_TOKEN length] ? G_TOKEN : @"0" ;
 }
 
+
+#pragma mark -- 微猫 签名
+/*ADD WEMART RSA SIGN*/
++ (ResultParsered *)getWemartRsaSignWithUserID:(NSString *)userID
+                                         appID:(NSString *)appID
+{
+    NSMutableDictionary *paramer = [self getParameters] ;
+    [paramer setObject:appID    forKey:@"appId"] ;
+    [paramer setObject:userID   forKey:@"userId"] ;
+
+    return [self getJsonWithURLstr:[self getFinalUrl:URL_WEMART_SIGN] AndWithParamer:paramer AndWithMode:GET_MODE] ;
+}
+
 #pragma mark -- 审核开关
 /**
  请求参数	是否必须	说明

@@ -10,6 +10,8 @@
 #import "Header.h"
 #import "XTAnimation.h"
 #import "RightCell.h"
+#import "ShareUtils.h"
+#import "DigitInformation.h"
 
 int const       NUM_SHARE   = 3 ;
 
@@ -37,6 +39,7 @@ int const       NUM_SHARE   = 3 ;
         tableView.bounces = NO;
         tableView;
     }) ;
+    
     [self.view addSubview:self.tableView] ;
 }
 
@@ -55,25 +58,8 @@ int const       NUM_SHARE   = 3 ;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    switch (indexPath.row) {
-        case 0:
-        {
-            
-        }
-            break;
-        case 1:
-        {
-            
-        }
-            break;
-        case 2:
-        {
-            
-        }
-            break;
-        default:
-            break;
-    }
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:SHARE_R_NOTIFICATION object:@(indexPath.row)] ;
     
 //    [self.sideMenuViewController hideMenuViewController];
 }

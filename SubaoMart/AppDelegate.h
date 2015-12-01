@@ -7,14 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LeftCtrller.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) LeftCtrller *leftctrller ;
 
-//@property (strong, nonatomic) NSString *wbtoken;
-//@property (strong, nonatomic) NSString *wbCurrentUserID;
-//@property (strong, nonatomic) NSString *wbRefreshToken;
+//WEIBO
+@property (strong, nonatomic) NSString *wbtoken;
+@property (strong, nonatomic) NSString *wbCurrentUserID;
+@property (strong, nonatomic) NSString *wbRefreshToken;
 
 @end
 

@@ -14,5 +14,6 @@
 @interface LeftCtrller : UIViewController <UITableViewDataSource, UITableViewDelegate, RESideMenuDelegate>
 
 - (void)popupAnimaton ;
+- (void)refreshUserInfo ;
 
 @end

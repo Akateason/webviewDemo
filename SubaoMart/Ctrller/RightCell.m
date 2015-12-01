@@ -11,8 +11,8 @@
 #import "XTAnimation.h"
 
 @interface RightCell ()
-@property (nonatomic,strong) UIImageView *imgView ;
-@property (nonatomic,strong) UILabel *label ;
+@property (nonatomic,strong) UIImageView    *imgView ;
+@property (nonatomic,strong) UILabel        *label ;
 @end
 
 @implementation RightCell
@@ -42,7 +42,6 @@
     if (!_imgView) {
         _imgView = [[UIImageView alloc] init] ;
         _imgView.frame = CGRectMake(APPFRAME.size.width - IMG_SIDE - 20 , 0, IMG_SIDE, IMG_SIDE) ;
-//        _imgView.image = [UIImage imageNamed:images[indexPath.row]] ;
         if (![_imgView superview]) {
             [self.contentView addSubview:_imgView] ;
         }
@@ -58,7 +57,6 @@
         CGRect labelRect = CGRectMake(0 , 0, self.imgView.frame.origin.x - 20.0 , IMG_SIDE) ;
         _label.frame = labelRect ;
         _label.textAlignment = NSTextAlignmentRight ;
-        //label.text = titles[indexPath.row] ;
         _label.textColor = [UIColor whiteColor] ;
         _label.highlightedTextColor = [UIColor lightGrayColor] ;
         _label.font = [UIFont systemFontOfSize:16.0] ;
@@ -82,11 +80,6 @@
     _textStr = textStr ;
     
     self.label.text = textStr ;
-}
-
-- (void)awakeFromNib
-{
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

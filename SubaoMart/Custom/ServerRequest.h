@@ -16,6 +16,10 @@
 
 @interface ServerRequest : XTRequest
 
+#pragma mark -- 微猫 签名
++ (ResultParsered *)getWemartRsaSignWithUserID:(NSString *)userID
+                                         appID:(NSString *)appID ;
+
 #pragma mark -- 审核开关
 /**
  请求参数	是否必须	说明
@@ -37,7 +41,6 @@
              contentID:(int)aidOrUid
                success:(void (^)(id json))success
                   fail:(void (^)())fail ;
-
 
 #pragma mark -- 发布
 /** 发布一条图文信息

@@ -9,12 +9,16 @@
 #import "LeftCtrller.h"
 #import "UIViewController+RESideMenu.h"
 #import "Header.h"
+#import "KeyChainHeader.h"
 #import "XTAnimation.h"
 #import "UMSocial.h"
 #import "ServerRequest.h"
 #import "User.h"
 #import "DigitInformation.h"
 #import "UIImageView+WebCache.h"
+#import "WeiboSDK.h"
+#import "AppDelegate.h"
+#import "WXApi.h"
 
 int const      NUM_LOGIN  = 2 ;
 static CGFloat ROW_HEIGHT = 75.0 ;
@@ -30,6 +34,21 @@ static CGFloat heightHead = 60.0f ;
 
 @implementation LeftCtrller
 
+#pragma mark --
+#pragma mark - Initialization
+- (nullable instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder] ;
+    if (self) {
+        ((AppDelegate *)([UIApplication sharedApplication].delegate)).leftctrller = self ;
+    }
+    
+    return self ;
+}
+
+
+#pragma mark --
+#pragma mark - Properties
 - (UIImageView *)headImage
 {
     if (!_headImage) {
@@ -91,14 +110,17 @@ static CGFloat heightHead = 60.0f ;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
         _tableView.bounces = NO ;
         _tableView.scrollsToTop = NO ;
-        if (![_tableView superview]) {
-            [self.view addSubview:_tableView] ;
-        }
+
     }
-    
+
+    if (![_tableView superview]) {
+        [self.view addSubview:_tableView] ;
+    }
     return _tableView ;
 }
 
+#pragma mark -
+#pragma mark -- public
 - (void)refreshUserInfo
 {
     _nameLabel.text = !G_USER.u_id ? @"未登录" : G_USER.u_nickname ;
@@ -144,6 +166,7 @@ static CGFloat heightHead = 60.0f ;
 
 - (void)loginWithIndex:(int)index
 {
+    
     switch (index) {
         case 0:
         {
@@ -158,48 +181,18 @@ static CGFloat heightHead = 60.0f ;
         default:
             break;
     }
+    
 //    [self.sideMenuViewController hideMenuViewController];
 }
 
 - (void)weiboLoginAction
 {
-    UMSocialSnsPlatform *snsPlatform = [UMSocialSnsPlatformManager getSocialPlatformWithName:UMShareToSina];
+    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
+    request.redirectURI = WB_REDIRECTURL;
+    request.scope = @"all" ;
+    //@"email,direct_messages_write,direct_messages_read,invitation_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog" ; //@"all";
     
-    snsPlatform.loginClickHandler(self,[UMSocialControllerService defaultControllerService],YES,^(UMSocialResponseEntity *response){
-        
-        if (response.responseCode == UMSResponseCodeSuccess) {
-            
-            UMSocialAccountEntity *snsAccount = [[UMSocialAccountManager socialAccountDictionary] valueForKey:UMShareToSina] ;
-            
-            //得到的数据在回调Block对象形参respone的data属性
-            [[UMSocialDataService defaultDataService] requestSnsInformation:UMShareToSina
-                                                                 completion:^(UMSocialResponseEntity *response) {
-                NSLog(@"SnsInformation is %@",response.data);
-                
-                NSNumber *gender = [response.data objectForKey:@"gender"] ;
-                NSString *head   = [response.data objectForKey:@"profile_image_url"] ;
-                NSString *wbUid  = [response.data objectForKey:@"uid"] ;
-                NSString *desc   = [response.data objectForKey:@"description"] ;
-                
-                [ServerRequest loginUnitWithCategory:mode_WeiBo wxopenID:nil wxUnionID:nil nickName:snsAccount.userName gender:gender language:nil country:nil province:nil city:nil headpic:head wbuid:wbUid description:desc username:nil password:nil Success:^(id json) {
-                    
-                    ResultParsered *result = [[ResultParsered alloc] initWithDic:json] ;
-                    [User loginWithResult:result] ;
-                    
-                    [self refreshUserInfo] ;
-                    [self.tableView reloadData] ;
-                } fail:^{
-                    //                    dispatch_async(dispatch_get_main_queue(), ^{
-                    //                        [XTHudManager showWordHudWithTitle:WD_HUD_FAIL_RETRY] ;
-                    //                    }) ;
-                    NSLog(@"failed") ;
-                }] ;
-                
-            }];
-        }
-        
-    });
-
+    [WeiboSDK sendRequest:request];
 }
 
 - (void)weixinLoginAction
@@ -225,13 +218,13 @@ static CGFloat heightHead = 60.0f ;
                     
                     ResultParsered *result = [[ResultParsered alloc] initWithDic:json] ;
                     [User loginWithResult:result] ;
-
+                    
                     [self refreshUserInfo] ;
                     [self.tableView reloadData] ;
                 } fail:^{
-//                    dispatch_async(dispatch_get_main_queue(), ^{
-//                        [XTHudManager showWordHudWithTitle:WD_HUD_FAIL_RETRY] ;
-//                    }) ;
+                    //                    dispatch_async(dispatch_get_main_queue(), ^{
+                    //                        [XTHudManager showWordHudWithTitle:WD_HUD_FAIL_RETRY] ;
+                    //                    }) ;
                     NSLog(@"failed") ;
                 }] ;
                 

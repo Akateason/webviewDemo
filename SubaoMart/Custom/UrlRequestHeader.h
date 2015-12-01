@@ -17,6 +17,10 @@
  */
 #define G_IP_SERVER             @"http://api3.subaojiang.com/"
 
+
+// 微猫
+#define URL_WEMART_SIGN         @"Wemart/sign"
+
 //审核开关
 #define URL_CHECK_SWITCH        @"login/version_switch"
 

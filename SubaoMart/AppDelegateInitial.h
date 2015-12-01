@@ -11,7 +11,10 @@
 
 @interface AppDelegateInitial : NSObject
 
-- (instancetype)initWithApplication:(UIApplication *)application options:(NSDictionary *)launchOptions window:(UIWindow *)window ;
+- (instancetype)initWithApplication:(UIApplication *)application
+                            options:(NSDictionary *)launchOptions
+                             window:(UIWindow *)window ;
+
 - (void)setup ;
 
 @end
