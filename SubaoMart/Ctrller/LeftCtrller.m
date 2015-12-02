@@ -30,6 +30,9 @@ static CGFloat heightHead = 60.0f ;
 @property (strong, nonatomic) UITableView *tableView ;
 @property (strong, nonatomic) UIImageView *headImage ;
 @property (strong, nonatomic) UILabel     *nameLabel ;
+
+
+
 @end
 
 @implementation LeftCtrller
@@ -140,10 +143,15 @@ static CGFloat heightHead = 60.0f ;
 
 - (void)popupAnimaton
 {
-    static CGFloat durationShake = 0.56 ;
-    [XTAnimation shakeRandomDirectionWithDuration:durationShake AndWithView:self.headImage] ;
-    [XTAnimation shakeRandomDirectionWithDuration:durationShake AndWithView:self.nameLabel] ;
+    static CGFloat durationShake = 0.16 ;
+    CABasicAnimation *animation = [XTAnimation horizonRotationWithDuration:durationShake degree:180 direction:1 repeatCount:2] ;
+    
+    for (int i = 0; i < 2; i++) {
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] ;
+        [cell.imageView.layer addAnimation:animation forKey:@"round"] ;
+    }
 }
+
 
 #pragma mark -
 #pragma mark UITableView Delegate
@@ -152,7 +160,7 @@ static CGFloat heightHead = 60.0f ;
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath] ;
-    [UIView animateWithDuration:1.0
+    [UIView animateWithDuration:0.8
                      animations:^{
                          [XTAnimation animationRippleEffect:cell] ;
                      }
@@ -166,7 +174,6 @@ static CGFloat heightHead = 60.0f ;
 
 - (void)loginWithIndex:(int)index
 {
-    
     switch (index) {
         case 0:
         {
@@ -181,18 +188,14 @@ static CGFloat heightHead = 60.0f ;
         default:
             break;
     }
-    
-//    [self.sideMenuViewController hideMenuViewController];
 }
 
 - (void)weiboLoginAction
 {
-    WBAuthorizeRequest *request = [WBAuthorizeRequest request];
-    request.redirectURI = WB_REDIRECTURL;
+    WBAuthorizeRequest *request = [WBAuthorizeRequest request] ;
+    request.redirectURI = WB_REDIRECTURL ;
     request.scope = @"all" ;
-    //@"email,direct_messages_write,direct_messages_read,invitation_write,friendships_groups_read,friendships_groups_write,statuses_to_me_read,follow_app_official_microblog" ; //@"all";
-    
-    [WeiboSDK sendRequest:request];
+    [WeiboSDK sendRequest:request] ;
 }
 
 - (void)weixinLoginAction

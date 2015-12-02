@@ -78,7 +78,6 @@
     // Do any additional setup after loading the view
     
     self.panGestureEnabled = G_CHECK_SWITCH ;
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -113,6 +112,7 @@
 - (void)sideMenu:(RESideMenu *)sideMenu didHideMenuViewController:(UIViewController *)menuViewController
 {
 //    NSLog(@"didHideMenuViewController: %@", NSStringFromClass([menuViewController class]));
+    [[NSNotificationCenter defaultCenter] postNotificationName:HIDE_MENU_NOTIFICATION object:nil] ;
 }
 
 @end

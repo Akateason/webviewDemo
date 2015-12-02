@@ -12,6 +12,16 @@
 #import "ShareUtils.h"
 #import "WemartProduct.h"
 #import "UIImageView+WebCache.h"
+#import "XTAnimation.h"
+#import "UIImage+AddFunction.h"
+
+@interface WemartMarketViewController ()
+{
+    UIImageView *m_userImage ;
+    UIImageView *m_refreshImage ;
+    UIImageView *m_shareImage ;
+}
+@end
 
 @implementation WemartMarketViewController
 
@@ -24,6 +34,11 @@
                                                  selector:@selector(shareWithIndex:)
                                                      name:SHARE_R_NOTIFICATION
                                                    object:nil] ;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(shake)
+                                                     name:HIDE_MENU_NOTIFICATION
+                                                   object:nil] ;
     }
     return self;
 }
@@ -33,6 +48,18 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self
                                                     name:SHARE_R_NOTIFICATION
                                                   object:nil] ;
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:HIDE_MENU_NOTIFICATION
+                                                  object:nil] ;
+}
+
+static CGFloat duration = 0.68 ;
+
+- (void)shake
+{
+    [XTAnimation shakeRandomDirectionWithDuration:duration AndWithView:m_userImage] ;
+    [XTAnimation shakeRandomDirectionWithDuration:duration AndWithView:m_shareImage] ;
+    [XTAnimation shakeRandomDirectionWithDuration:duration AndWithView:m_refreshImage] ;
 }
 
 - (void)shareWithIndex:(NSNotification *)notification
@@ -101,18 +128,52 @@
     }
 }
 
+
 #pragma mark --
 #pragma mark - Life
+
+static float btSide = 25.0 ;
+
 - (void)viewDidLoad
 {
     if (G_CHECK_SWITCH) {
         [self.navigationController setHidesBarsOnSwipe:YES] ;
         
-        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"user"] style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonClicked)] ;
+        m_userImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btSide, btSide)] ;
+        m_userImage.image = [[UIImage imageNamed:@"user"] imageWithColor:[UIColor whiteColor]] ;
+        m_userImage.contentMode = UIViewContentModeScaleAspectFit ;
+        UIButton *btUser = [[UIButton alloc] init] ;
+        btUser.bounds = m_userImage.bounds ;
+        [btUser addSubview:m_userImage] ;
+        [btUser addTarget:self action:@selector(leftButtonClicked) forControlEvents:UIControlEventTouchUpInside] ;
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:btUser] ;
         self.navigationItem.leftBarButtonItem = leftItem ;
-        UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"share"] style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonClicked)] ;
-        UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"replay"] style:UIBarButtonItemStylePlain target:self action:@selector(replay)] ;
+
+        m_shareImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btSide, btSide)] ;
+        m_shareImage.image = [[UIImage imageNamed:@"share"] imageWithColor:[UIColor whiteColor]] ;
+        m_shareImage.contentMode = UIViewContentModeScaleAspectFit ;
+        UIButton *btShare = [[UIButton alloc] init] ;
+        btShare.bounds = m_shareImage.bounds ;
+        [btShare addSubview:m_shareImage] ;
+        [btShare addTarget:self action:@selector(rightButtonClicked) forControlEvents:UIControlEventTouchUpInside] ;
+        UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:btShare] ;
+        
+        m_refreshImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btSide, btSide)] ;
+        m_refreshImage.image = [[UIImage imageNamed:@"replay"] imageWithColor:[UIColor whiteColor]];
+        m_refreshImage.contentMode = UIViewContentModeScaleAspectFit ;
+        UIButton *btRefresh = [[UIButton alloc] init] ;
+        btRefresh.bounds = m_refreshImage.bounds ;
+        [btRefresh addSubview:m_refreshImage] ;
+        [btRefresh addTarget:self action:@selector(replay) forControlEvents:UIControlEventTouchUpInside] ;
+        UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithCustomView:btRefresh] ;
+        
         self.navigationItem.rightBarButtonItems = @[shareItem,refreshItem] ;
+
+//        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"user"] style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonClicked)] ;
+//        self.navigationItem.leftBarButtonItem = leftItem ;
+//        UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"share"] style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonClicked)] ;
+//        UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"replay"] style:UIBarButtonItemStylePlain target:self action:@selector(replay)] ;
+//        self.navigationItem.rightBarButtonItems = @[shareItem,refreshItem] ;
     }
     else {
         self.navigationController.navigationBarHidden = YES ;

@@ -297,8 +297,6 @@
     
     animation.delegate= self;
     
-    
-    
     return animation;
     
 }
@@ -367,30 +365,24 @@ static NSString * const kAFViewShakerAnimationKey = @"kAFViewShakerAnimationKey"
     {
         CAKeyframeAnimation * animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.x"];
         CGFloat currentTx = view.transform.tx;
-//        animation.delegate = self;
         animation.duration = duration;
-        animation.values = @[ @(currentTx), @(currentTx + 8), @(currentTx-6), @(currentTx + 6), @(currentTx - 3), @(currentTx + 3), @(currentTx) ];
+        animation.values = @[ @(currentTx), @(currentTx + 6), @(currentTx - 4), @(currentTx + 4), @(currentTx - 2), @(currentTx + 2), @(currentTx) ];
         animation.keyTimes = @[ @(0), @(0.225), @(0.425), @(0.6), @(0.75), @(0.875), @(1) ];
         animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-        
-        
         [view.layer addAnimation:animation forKey:kAFViewShakerAnimationKey];
     }
     else
     {
         CAKeyframeAnimation * animation = [CAKeyframeAnimation animationWithKeyPath:@"transform.translation.y"];
         CGFloat currentTy = view.transform.ty;
-//        animation.delegate = self;
         animation.duration = duration;
-        animation.values = @[ @(currentTy), @(currentTy + 8), @(currentTy-6), @(currentTy + 6), @(currentTy - 3), @(currentTy + 3), @(currentTy) ];
+        animation.values = @[ @(currentTy), @(currentTy + 6), @(currentTy - 4), @(currentTy + 4), @(currentTy - 2), @(currentTy + 2), @(currentTy) ];
         animation.keyTimes = @[ @(0), @(0.225), @(0.425), @(0.6), @(0.75), @(0.875), @(1) ];
         animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    
         [view.layer addAnimation:animation forKey:kAFViewShakerAnimationKey];
     }
-    
-
 }
+
 
 
 #pragma mark --
