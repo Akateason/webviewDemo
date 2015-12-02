@@ -168,12 +168,6 @@ static float btSide = 25.0 ;
         UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithCustomView:btRefresh] ;
         
         self.navigationItem.rightBarButtonItems = @[shareItem,refreshItem] ;
-
-//        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"user"] style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonClicked)] ;
-//        self.navigationItem.leftBarButtonItem = leftItem ;
-//        UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"share"] style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonClicked)] ;
-//        UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"replay"] style:UIBarButtonItemStylePlain target:self action:@selector(replay)] ;
-//        self.navigationItem.rightBarButtonItems = @[shareItem,refreshItem] ;
     }
     else {
         self.navigationController.navigationBarHidden = YES ;
