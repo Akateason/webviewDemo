@@ -12,18 +12,64 @@
 #import "ShareUtils.h"
 #import "WemartProduct.h"
 #import "UIImageView+WebCache.h"
-#import "XTAnimation.h"
 #import "UIImage+AddFunction.h"
+#import "XTAnimation.h"
+#import "UIViewController+NavExtension.h"
+#import "YouzanViewController.h"
 
 @interface WemartMarketViewController ()
-{
-    UIImageView *m_userImage ;
-    UIImageView *m_refreshImage ;
-    UIImageView *m_shareImage ;
-}
+
+@property (nonatomic,strong) UIImageView *userImageView ;
+@property (nonatomic,strong) UIImageView *refreshImageView ;
+@property (nonatomic,strong) UIImageView *shareImageView ;
+@property (nonatomic,strong) UIImageView *shuffleImageView ;
+
 @end
 
 @implementation WemartMarketViewController
+
+static float btSide = 25.0 ;
+
+- (UIImageView *)userImageView
+{
+    if (!_userImageView) {
+        _userImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btSide, btSide)] ;
+        _userImageView.image = [[UIImage imageNamed:@"user"] imageWithColor:[UIColor whiteColor]] ;
+        _userImageView.contentMode = UIViewContentModeScaleAspectFit ;
+    }
+    return _userImageView ;
+}
+
+- (UIImageView *)refreshImageView
+{
+    if (!_refreshImageView) {
+        _refreshImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btSide, btSide)] ;
+        _refreshImageView.image = [[UIImage imageNamed:@"replay"] imageWithColor:[UIColor whiteColor]];
+        _refreshImageView.contentMode = UIViewContentModeScaleAspectFit ;
+    }
+    return _refreshImageView ;
+}
+
+- (UIImageView *)shareImageView
+{
+    if (!_shareImageView) {
+        _shareImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btSide, btSide)] ;
+        _shareImageView.image = [[UIImage imageNamed:@"share"] imageWithColor:[UIColor whiteColor]] ;
+        _shareImageView.contentMode = UIViewContentModeScaleAspectFit ;
+    }
+    return _shareImageView ;
+}
+
+- (UIImageView *)shuffleImageView
+{
+    if (!_shuffleImageView) {
+        _shuffleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btSide, btSide)] ;
+        _shuffleImageView.image = [[UIImage imageNamed:@"shuffle"] imageWithColor:[UIColor whiteColor]] ;
+        _shuffleImageView.contentMode = UIViewContentModeScaleAspectFit ;
+    }
+    return _shuffleImageView ;
+}
+
 
 - (instancetype)init
 {
@@ -53,128 +99,70 @@
                                                   object:nil] ;
 }
 
-static CGFloat duration = 0.68 ;
+static CGFloat duration = 0.38 ;
 
 - (void)shake
 {
-    [XTAnimation shakeRandomDirectionWithDuration:duration AndWithView:m_userImage] ;
-    [XTAnimation shakeRandomDirectionWithDuration:duration AndWithView:m_shareImage] ;
-    [XTAnimation shakeRandomDirectionWithDuration:duration AndWithView:m_refreshImage] ;
+    [XTAnimation shakeRandomDirectionWithDuration:duration AndWithView:self.userImageView] ;
+    [XTAnimation shakeRandomDirectionWithDuration:duration AndWithView:self.shareImageView] ;
+    [XTAnimation shakeRandomDirectionWithDuration:duration AndWithView:self.refreshImageView] ;
+    [XTAnimation shakeRandomDirectionWithDuration:duration AndWithView:self.shuffleImageView] ;
 }
 
 - (void)shareWithIndex:(NSNotification *)notification
 {
+    if (!self.view.window) return ;
+    
+    
     NSString * sharedData = [self getSharedData];
-    NSLog(@"%@", sharedData);
+//    NSLog(@"%@", sharedData);
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[sharedData dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil] ;
     WemartProduct *wemartProduct = [[WemartProduct alloc] initWithDic:dict] ;
-    
-    UIImage *resultImage = [[SDImageCache sharedImageCache] imageFromDiskCacheForKey:wemartProduct.thumbData] ;
-    if (!resultImage)
-    {
-        [[SDWebImageDownloader sharedDownloader] downloadImageWithURL:[NSURL URLWithString:wemartProduct.thumbData]
-                                                              options:0
-                                                             progress:nil
-                                                            completed:^(UIImage *image, NSData *data, NSError *error, BOOL finished) {
-                                                                
-                                                                [self shareFuncWithImage:image
-                                                                               wemartPdt:wemartProduct
-                                                                                   index:[notification.object intValue]] ;
-                                                                
-                                                            }] ;
-    }
-    else
-    {
-        [self shareFuncWithImage:resultImage
-                       wemartPdt:wemartProduct
-                           index:[notification.object intValue]] ;
-    }
-}
-
-- (void)shareFuncWithImage:(UIImage *)image
-                 wemartPdt:(WemartProduct *)wemartProduct
-                     index:(int)index
-{
-    switch (index)
-    {
-        case 0:
-        {
-            [ShareUtils weiboShareFuncWithContent:STR_I_WANT_BUY
-                                              url:wemartProduct.shareUrl
-                                            image:image
-                                          ctrller:self] ;
-        }
-            break;
-        case 1:
-        {
-            [ShareUtils weixinShareFuncTitle:STR_I_WANT_BUY
-                                     content:[wemartProduct.title stringByAppendingString:wemartProduct.content]
-                                         url:wemartProduct.shareUrl
-                                       image:image
-                                     ctrller:self] ;
-        }
-            break;
-        case 2:
-        {
-            [ShareUtils wxFriendShareFuncTitle:STR_I_WANT_BUY
-                                       Content:[wemartProduct.title stringByAppendingString:wemartProduct.content]
-                                           url:wemartProduct.shareUrl
-                                         image:image
-                                       ctrller:self] ;
-        }
-            break;
-        default:
-            break;
-    }
+    [wemartProduct getImageWillShareWithShareIndex:[notification.object intValue] ctrller:self] ;
 }
 
 
 #pragma mark --
 #pragma mark - Life
-
-static float btSide = 25.0 ;
-
 - (void)viewDidLoad
 {
-    if (G_CHECK_SWITCH) {
-        [self.navigationController setHidesBarsOnSwipe:YES] ;
-        
-        m_userImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btSide, btSide)] ;
-        m_userImage.image = [[UIImage imageNamed:@"user"] imageWithColor:[UIColor whiteColor]] ;
-        m_userImage.contentMode = UIViewContentModeScaleAspectFit ;
-        UIButton *btUser = [[UIButton alloc] init] ;
-        btUser.bounds = m_userImage.bounds ;
-        [btUser addSubview:m_userImage] ;
-        [btUser addTarget:self action:@selector(leftButtonClicked) forControlEvents:UIControlEventTouchUpInside] ;
-        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:btUser] ;
-        self.navigationItem.leftBarButtonItem = leftItem ;
-
-        m_shareImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btSide, btSide)] ;
-        m_shareImage.image = [[UIImage imageNamed:@"share"] imageWithColor:[UIColor whiteColor]] ;
-        m_shareImage.contentMode = UIViewContentModeScaleAspectFit ;
-        UIButton *btShare = [[UIButton alloc] init] ;
-        btShare.bounds = m_shareImage.bounds ;
-        [btShare addSubview:m_shareImage] ;
-        [btShare addTarget:self action:@selector(rightButtonClicked) forControlEvents:UIControlEventTouchUpInside] ;
-        UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithCustomView:btShare] ;
-        
-        m_refreshImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, btSide, btSide)] ;
-        m_refreshImage.image = [[UIImage imageNamed:@"replay"] imageWithColor:[UIColor whiteColor]];
-        m_refreshImage.contentMode = UIViewContentModeScaleAspectFit ;
-        UIButton *btRefresh = [[UIButton alloc] init] ;
-        btRefresh.bounds = m_refreshImage.bounds ;
-        [btRefresh addSubview:m_refreshImage] ;
-        [btRefresh addTarget:self action:@selector(replay) forControlEvents:UIControlEventTouchUpInside] ;
-        UIBarButtonItem *refreshItem = [[UIBarButtonItem alloc] initWithCustomView:btRefresh] ;
-        
-        self.navigationItem.rightBarButtonItems = @[shareItem,refreshItem] ;
+    if (G_CHECK_SWITCH)
+    {
+        [self customNavigationBarWithUserImage:self.userImageView
+                                    shareImage:self.shareImageView
+                                  refreshImage:self.refreshImageView
+                                  shuffleImage:self.shuffleImageView
+                                  bLeftClicked:^{
+                                        [self leftButtonClicked] ;
+        }
+                                 bRightClicked:^{
+                                        [self rightButtonClicked] ;
+        }
+                                       bReplay:^{
+                                        [self replay] ;
+        }
+                                      bShuffle:^{
+                                        [self shuffle] ;
+        }
+         ] ;
     }
-    else {
+    else
+    {
         self.navigationController.navigationBarHidden = YES ;
     }
 
-    
     [super viewDidLoad];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+
+    if (self.navigationController.hidesBarsOnSwipe == NO) {
+        self.navigationController.hidesBarsOnSwipe = YES ;
+    }
+    
 }
 
 - (void)leftButtonClicked
@@ -191,6 +179,11 @@ static float btSide = 25.0 ;
 {
     UIWebView *webView = [self valueForKey:@"webView"] ;
     [webView reload] ;
+}
+
+- (void)shuffle
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:WM_SHUFFLE_NOTIFICAITON] ;
 }
 
 //#pragma mark --

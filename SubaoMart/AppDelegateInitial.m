@@ -15,6 +15,8 @@
 #import "UMSocialSinaSSOHandler.h"
 #import "DigitInformation.h"
 #import "WXApi.h"
+#import "YZSDK.h"
+
 
 @interface AppDelegateInitial ()
 @property (nonatomic,strong) NSDictionary *launchOptions ;
@@ -52,6 +54,21 @@
     
     //  weibo Initialization .
     [self weiboInitialization] ;
+}
+
+static NSString *userAgent = @"kdtUnion_subaojiang";//  //kdtUnion_demo  注意UA的规范，UA一定是kdtUnion_xxx的规范
+static NSString *appID = @"d98b118bfad1ae4c3f";///应用营销三方开放API出可以设置
+static NSString *appSecret = @"7a2257333e606a526769e758ef2f05f7";//这里设置时候注意，UA一定是以kdtUnion_为前缀的，如果给您的UA是没有kdtUnion_的前缀，请联系墨迹，看UA是否给您的是正确的
+
+- (void)configureYouZan
+{
+    [YZSDK setOpenDebugLog:YES];
+    [YZSDK userAgentInit:userAgent version:@""];
+    [YZSDK setOpenInterfaceAppID:appID appSecret:appSecret];
+    
+    //避免跟其他三方库中获取ip地址的方法冲突，暂时通过三方app自己设置，注意：当且仅当在使用自有微信支付的时候才需要设置ip地址
+    [YZSDK setSelfWxPayInterfaceClientIPAddress:@""];
+
 }
 
 - (void)getTokenAndUser

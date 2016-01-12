@@ -25,4 +25,18 @@
 //APPID APPSTORE
 #define APPSTORE_APPID              @"999705868"
 
+
+//有赞
+//返回参数函数处理
+static NSString *CHECK_LOGIN = @"check_login";
+static NSString *SHARE_DATA = @"share_data";
+static NSString *WEB_READY = @"web_ready";
+static NSString *WX_PAY = @"wx_pay";
+
+//分享相关参数
+static NSString *SHARE_TITLE = @"title";
+static NSString *SHARE_LINK = @"link";
+static NSString *SHARE_IMAGE_URL = @"img_url";
+static NSString *SHARE_DESC = @"desc";
+
 #endif

@@ -27,6 +27,10 @@
 
 #define HIDE_MENU_NOTIFICATION  @"HIDE_MENU_NOTIFICATION"
 
+#define SHUFFLE_NOTIFICAITON    @"SHUFFLE_NOTIFICAITON"
+
+#define WM_SHUFFLE_NOTIFICAITON    @"wm"
+#define YZ_SHUFFLE_NOTIFICAITON    @"yz"
 
 #define STR_I_WANT_BUY          @"我在速报酱商城看到了好玩的,快来买买买~"
 

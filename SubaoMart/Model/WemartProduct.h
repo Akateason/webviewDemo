@@ -18,4 +18,6 @@
 
 - (instancetype)initWithDic:(NSDictionary *)dic ;
 
+- (void)getImageWillShareWithShareIndex:(int)shareIndex ctrller:(UIViewController *)ctrller ;
+
 @end

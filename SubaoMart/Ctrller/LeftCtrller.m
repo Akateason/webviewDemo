@@ -23,15 +23,13 @@
 int const      NUM_LOGIN  = 2 ;
 static CGFloat ROW_HEIGHT = 75.0 ;
 static CGFloat heightHead = 60.0f ;
-
-#define        flex         APPFRAME.size.height / 2.0 - heightHead / 2.0       // 150.0f ;
+#define        flex         APPFRAME.size.height / 2.0 - heightHead / 2.0
 
 @interface LeftCtrller ()
+
 @property (strong, nonatomic) UITableView *tableView ;
 @property (strong, nonatomic) UIImageView *headImage ;
 @property (strong, nonatomic) UILabel     *nameLabel ;
-
-
 
 @end
 
@@ -101,7 +99,7 @@ static CGFloat heightHead = 60.0f ;
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0 ,
                                                                    APPFRAME.size.height / 14 ,
                                                                    self.view.frame.size.width ,
-                                                                   ROW_HEIGHT * NUM_LOGIN + heightHead + flex)
+                                                                   ROW_HEIGHT * NUM_LOGIN + heightHead + flex )
                                                   style:UITableViewStylePlain] ;
         _tableView.tableHeaderView = header ;
         _tableView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth ;
@@ -113,12 +111,12 @@ static CGFloat heightHead = 60.0f ;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone ;
         _tableView.bounces = NO ;
         _tableView.scrollsToTop = NO ;
-
     }
-
+    
     if (![_tableView superview]) {
         [self.view addSubview:_tableView] ;
     }
+    
     return _tableView ;
 }
 
@@ -129,7 +127,6 @@ static CGFloat heightHead = 60.0f ;
     _nameLabel.text = !G_USER.u_id ? @"未登录" : G_USER.u_nickname ;
     [_headImage sd_setImageWithURL:[NSURL URLWithString:G_USER.u_headpic]
                   placeholderImage:[UIImage imageNamed:@"2"]] ;
-
 }
 
 - (void)viewDidLoad
@@ -143,15 +140,12 @@ static CGFloat heightHead = 60.0f ;
 
 - (void)popupAnimaton
 {
-    static CGFloat durationShake = 0.16 ;
-    CABasicAnimation *animation = [XTAnimation horizonRotationWithDuration:durationShake degree:180 direction:1 repeatCount:2] ;
-    
+    CABasicAnimation *animation = [XTAnimation horizonRotationWithDuration:0.16 degree:180 direction:1 repeatCount:2] ;
     for (int i = 0; i < 2; i++) {
         UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]] ;
         [cell.imageView.layer addAnimation:animation forKey:@"round"] ;
     }
 }
-
 
 #pragma mark -
 #pragma mark UITableView Delegate
@@ -225,9 +219,6 @@ static CGFloat heightHead = 60.0f ;
                     [self refreshUserInfo] ;
                     [self.tableView reloadData] ;
                 } fail:^{
-                    //                    dispatch_async(dispatch_get_main_queue(), ^{
-                    //                        [XTHudManager showWordHudWithTitle:WD_HUD_FAIL_RETRY] ;
-                    //                    }) ;
                     NSLog(@"failed") ;
                 }] ;
                 
@@ -237,30 +228,27 @@ static CGFloat heightHead = 60.0f ;
     });
 }
 
-
 #pragma mark -
 #pragma mark UITableView Datasource
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return ROW_HEIGHT;
+    return ROW_HEIGHT ;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 1 ;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)sectionIndex
 {
-    return NUM_LOGIN;
+    return NUM_LOGIN ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"Cell";
-    
+    static NSString *cellIdentifier = @"ShareCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
         cell.backgroundColor = [UIColor clearColor];
@@ -269,12 +257,10 @@ static CGFloat heightHead = 60.0f ;
         cell.textLabel.highlightedTextColor = [UIColor lightGrayColor];
         cell.selectedBackgroundView = [[UIView alloc] init];
     }
-    
     NSArray *titles = @[@"微博登录", @"微信登录"];
     NSArray *images = @[@"login_weibo", @"login_weixin"];
     cell.textLabel.text = titles[indexPath.row];
     cell.imageView.image = [UIImage imageNamed:images[indexPath.row]];
-    
     return cell;
 }
 
