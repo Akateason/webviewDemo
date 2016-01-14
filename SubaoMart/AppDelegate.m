@@ -15,6 +15,7 @@
 #import "WeiboSDK.h"
 #import "ServerRequest.h"
 #import "User.h"
+#import "CurrentUser.h"
 
 @interface AppDelegate () <WeiboSDKDelegate>
 
@@ -138,7 +139,8 @@
                                      Success:^(id json) {
                                          
                                          ResultParsered *result = [[ResultParsered alloc] initWithDic:json] ;
-                                         [User loginWithResult:result] ;
+                                         [[CurrentUser shareInstance] login:result] ;
+//                                         [User loginWithResult:result] ;
                                          
                                          [self.leftctrller refreshUserInfo] ;
                                      } fail:^{

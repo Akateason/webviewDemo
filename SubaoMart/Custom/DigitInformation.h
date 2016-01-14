@@ -9,13 +9,14 @@
 #define FLOAT_HUD_MINSHOW       2.0f
 
 #import <Foundation/Foundation.h>
+#import "CurrentUser.h"
 
-@class User ;
 
 #define G_TOKEN                     [DigitInformation shareInstance].g_token
-#define G_USER                      [DigitInformation shareInstance].g_user
 #define G_BUY_LINKS                 [DigitInformation shareInstance].g_buyLinks
 #define G_CHECK_SWITCH              [DigitInformation shareInstance].g_checkSwitch
+
+#define G_USER                      [[CurrentUser shareInstance] getCurrentUser]
 
 @interface DigitInformation : NSObject
 
@@ -26,9 +27,6 @@
 
 // UUID
 @property (nonatomic,copy)      NSString        *uuid ;
-
-// user current
-@property (nonatomic,strong)    User            *g_user ;
 
 // Buy Links .
 @property (nonatomic,copy)      NSString        *g_buyLinks ;

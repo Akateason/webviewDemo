@@ -16,6 +16,8 @@ static dispatch_once_t  onceToken ;
 
 @implementation DigitInformation
 
+@synthesize g_token = _g_token ;
+
 + (DigitInformation *)shareInstance
 {
     dispatch_once(&onceToken, ^{
@@ -27,6 +29,18 @@ static dispatch_once_t  onceToken ;
 
 #pragma mark --
 #pragma mark - Setter
+- (void)setG_token:(NSString *)g_token
+{
+    _g_token = g_token ;
+    
+    if (g_token != nil) {
+        // cache token by archive .
+        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:PATH_TOKEN_SAVE] ;
+        [XTFileManager archiveTheObject:G_TOKEN AndPath:path] ;
+    }
+    
+    
+}
 
 #pragma mark --
 #pragma mark - Getter
@@ -66,17 +80,6 @@ static dispatch_once_t  onceToken ;
     }
     
     return _uuid ;
-}
-
-- (User *)g_user
-{
-    if (!_g_user) {
-        ResultParsered *result = [ServerRequest getMyIndexPersonalInfo] ;
-        if (!result) return nil ;
-        _g_user = [[User alloc] initWithDic:result.info] ;
-    }
-    
-    return _g_user ;
 }
 
 - (BOOL)g_checkSwitch

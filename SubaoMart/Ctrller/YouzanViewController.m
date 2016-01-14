@@ -18,7 +18,8 @@
 #import "CommonWebViewController.h"
 #import "UIImageView+WebCache.h"
 #import "YouZanProduct.h"
-
+#import "CurrentUser.h"
+#import "HudManager.h"
 
 /*
  页面的链接： 主要的事情多说几遍！！！！
@@ -171,39 +172,50 @@ static float btSide = 25.0 ;
 #pragma mark --
 - (void)loadRequestFromString:(NSString*)urlString
 {
-//    CacheUserInfo *cacheModel = [CacheUserInfo sharedManage];
-//    if(!cacheModel.isValid) {//无效的话 可以调用sdk的同步方法去同步信息，不会在webview中有多次交互的现象
-//        YZUserModel *userModel = [CacheUserInfo getYZUserModelFromCacheUserModel:cacheModel];
-//        //注意:只要调用接口，一定要记得appID和appSecret的值的设置
-//        [YZSDK registerYZUser:userModel callBack:^(NSString *message, BOOL isError) {
-//            if(isError) {
-//                cacheModel.isValid = NO;
-//            } else {
-//                cacheModel.isValid = YES;
-//                NSURL *url = [NSURL URLWithString:urlString];
-//                NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-//                [self.homePageWebView loadRequest:urlRequest];
-//            }
-//        }];
-//    } else {
+    if ([[CurrentUser shareInstance] isLogined])
+    {
+        YZUserModel *userModel = [CurrentUser getYZUserModelFromCacheUser:[[CurrentUser shareInstance] getCurrentUser]] ;
+        //注意:只要调用接口，一定要记得appID和appSecret的值的设置
+        [YZSDK registerYZUser:userModel callBack:^(NSString *message, BOOL isError) {
+            if(isError) {
+                NSLog(@"YZSDK失败") ;
+                
+            } else {
+                NSLog(@"YZSDK成功") ;
+
+                NSURL *url = [NSURL URLWithString:urlString];
+                NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+                [self.homePageWebView loadRequest:urlRequest];
+            }
+        }];
+    }
+    else
+    {
+//        未登录
+        [HudManager showHud:STR_NOT_LOGIN_YET] ;
+        [[NSNotificationCenter defaultCenter] postNotificationName:SLIDER_NOTIFICATION object:@1] ;
+        
         NSURL *url = [NSURL URLWithString:urlString];
         NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
         [self.homePageWebView loadRequest:urlRequest];
-//    }
+    }
+    
 }
 
-
 #pragma mark - webview delegate
-- (void)webViewDidStartLoad:(UIWebView *)webView {
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self.homePageWebView stringByEvaluatingJavaScriptFromString:[[YZSDK sharedInstance] jsBridgeWhenWebDidLoad]] ;
 }
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
@@ -252,8 +264,8 @@ static float btSide = 25.0 ;
 }
 
 #pragma mark --
-- (void)viewDidLoad {
-//
+- (void)viewDidLoad
+{
     if (G_CHECK_SWITCH)
     {
         [self customNavigationBarWithUserImage:self.userImageView
@@ -278,7 +290,7 @@ static float btSide = 25.0 ;
     {
         self.navigationController.navigationBarHidden = YES ;
     }
-
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
@@ -295,6 +307,8 @@ static float btSide = 25.0 ;
         self.navigationController.hidesBarsOnSwipe = YES ;
     }
 }
+
+#pragma mark --
 
 - (void)leftButtonClicked
 {
@@ -315,7 +329,6 @@ static float btSide = 25.0 ;
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:YZ_SHUFFLE_NOTIFICAITON] ;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

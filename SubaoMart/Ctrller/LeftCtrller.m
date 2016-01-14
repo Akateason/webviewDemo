@@ -19,6 +19,7 @@
 #import "WeiboSDK.h"
 #import "AppDelegate.h"
 #import "WXApi.h"
+#import "CurrentUser.h"
 
 int const      NUM_LOGIN  = 2 ;
 static CGFloat ROW_HEIGHT = 75.0 ;
@@ -138,6 +139,14 @@ static CGFloat heightHead = 60.0f ;
     [self tableView] ;
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated] ;
+
+    [self refreshUserInfo] ;
+    [self.tableView reloadData] ;
+}
+
 - (void)popupAnimaton
 {
     CABasicAnimation *animation = [XTAnimation horizonRotationWithDuration:0.16 degree:180 direction:1 repeatCount:2] ;
@@ -214,10 +223,11 @@ static CGFloat heightHead = 60.0f ;
                 [ServerRequest loginUnitWithCategory:mode_WeiXin wxopenID:openID wxUnionID:snsAccount.unionId nickName:snsAccount.userName gender:gender language:nil country:nil province:nil city:nil headpic:head wbuid:nil description:nil username:nil password:nil Success:^(id json) {
                     
                     ResultParsered *result = [[ResultParsered alloc] initWithDic:json] ;
-                    [User loginWithResult:result] ;
+                    [[CurrentUser shareInstance] login:result completion:^{
+                        [self refreshUserInfo] ;
+                        [self.tableView reloadData] ;
+                    }] ;
                     
-                    [self refreshUserInfo] ;
-                    [self.tableView reloadData] ;
                 } fail:^{
                     NSLog(@"failed") ;
                 }] ;

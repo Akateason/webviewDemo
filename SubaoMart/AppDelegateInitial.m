@@ -16,6 +16,7 @@
 #import "DigitInformation.h"
 #import "WXApi.h"
 #import "YZSDK.h"
+#import "CurrentUser.h"
 
 
 @interface AppDelegateInitial ()
@@ -75,7 +76,7 @@ static NSString *appSecret = @"7a2257333e606a526769e758ef2f05f7";//这里设置�
 {
     if ([[DigitInformation shareInstance] g_token] != nil)
     {
-        [[DigitInformation shareInstance] g_user] ;
+        [[CurrentUser shareInstance] getCurrentUser] ;
     }
 }
 

@@ -87,9 +87,10 @@
 		D74D49661C40CC7800FBF02A /* UIViewController+NavExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D49651C40CC7800FBF02A /* UIViewController+NavExtension.m */; };
 		D74D49691C40FDB000FBF02A /* YouzanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D49681C40FDB000FBF02A /* YouzanViewController.m */; };
 		D74D497B1C434F6700FBF02A /* libYouzanIOSSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D74D49711C434F6700FBF02A /* libYouzanIOSSDK.a */; };
-		D74D497F1C43615300FBF02A /* CacheUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D497E1C43615200FBF02A /* CacheUserInfo.m */; };
 		D74D49821C4364A700FBF02A /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D49811C4364A700FBF02A /* CommonWebViewController.m */; };
 		D74D49861C43BFB900FBF02A /* YouZanProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D49851C43BFB900FBF02A /* YouZanProduct.m */; };
+		D74D498C1C45F9A900FBF02A /* CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D498B1C45F9A900FBF02A /* CurrentUser.m */; };
+		D74D498F1C463AF300FBF02A /* HudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D498E1C463AF300FBF02A /* HudManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -288,12 +289,14 @@
 		D74D49781C434F6700FBF02A /* OpenTradeServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTradeServiceProtocol.h; sourceTree = "<group>"; };
 		D74D49791C434F6700FBF02A /* YZSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZSDK.h; sourceTree = "<group>"; };
 		D74D497A1C434F6700FBF02A /* YZSDKDefination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZSDKDefination.h; sourceTree = "<group>"; };
-		D74D497D1C43615200FBF02A /* CacheUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CacheUserInfo.h; path = Custom/CacheUserInfo.h; sourceTree = "<group>"; };
-		D74D497E1C43615200FBF02A /* CacheUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CacheUserInfo.m; path = Custom/CacheUserInfo.m; sourceTree = "<group>"; };
 		D74D49801C4364A700FBF02A /* CommonWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonWebViewController.h; path = Ctrller/CommonWebViewController.h; sourceTree = "<group>"; };
 		D74D49811C4364A700FBF02A /* CommonWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonWebViewController.m; path = Ctrller/CommonWebViewController.m; sourceTree = "<group>"; };
 		D74D49841C43BFB900FBF02A /* YouZanProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouZanProduct.h; path = Model/YouZanProduct.h; sourceTree = "<group>"; };
 		D74D49851C43BFB900FBF02A /* YouZanProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouZanProduct.m; path = Model/YouZanProduct.m; sourceTree = "<group>"; };
+		D74D498A1C45F9A900FBF02A /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrentUser.h; path = Model/CurrentUser.h; sourceTree = "<group>"; };
+		D74D498B1C45F9A900FBF02A /* CurrentUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrentUser.m; path = Model/CurrentUser.m; sourceTree = "<group>"; };
+		D74D498D1C463AF200FBF02A /* HudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HudManager.h; sourceTree = "<group>"; };
+		D74D498E1C463AF300FBF02A /* HudManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HudManager.m; sourceTree = "<group>"; };
 		EC69837A328ADFB4D80B84E1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -519,8 +522,8 @@
 			children = (
 				D703639D1C083DF5009EE089 /* User.h */,
 				D703639E1C083DF5009EE089 /* User.m */,
-				D74D497D1C43615200FBF02A /* CacheUserInfo.h */,
-				D74D497E1C43615200FBF02A /* CacheUserInfo.m */,
+				D74D498A1C45F9A900FBF02A /* CurrentUser.h */,
+				D74D498B1C45F9A900FBF02A /* CurrentUser.m */,
 				D70363E31C0D4DC3009EE089 /* WemartProduct.h */,
 				D70363E41C0D4DC3009EE089 /* WemartProduct.m */,
 				D74D49841C43BFB900FBF02A /* YouZanProduct.h */,
@@ -563,6 +566,8 @@
 				D729EFF01C05A601002DEAF7 /* XTAnimation.m */,
 				D729EFCF1BFDAFAA002DEAF7 /* UIImage+AddFunction.h */,
 				D729EFD01BFDAFAA002DEAF7 /* UIImage+AddFunction.m */,
+				D74D498D1C463AF200FBF02A /* HudManager.h */,
+				D74D498E1C463AF300FBF02A /* HudManager.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -957,6 +962,7 @@
 				D74D49691C40FDB000FBF02A /* YouzanViewController.m in Sources */,
 				D70363CE1C086958009EE089 /* SDWebImageDecoder.m in Sources */,
 				D729EFDB1BFDD096002DEAF7 /* RESideMenu.m in Sources */,
+				D74D498F1C463AF300FBF02A /* HudManager.m in Sources */,
 				D70363CA1C086958009EE089 /* MKAnnotationView+WebCache.m in Sources */,
 				D729EF861BFD6C3C002DEAF7 /* AppDelegate.m in Sources */,
 				D74D49861C43BFB900FBF02A /* YouZanProduct.m in Sources */,
@@ -965,6 +971,7 @@
 				D70363961C083316009EE089 /* DigitInformation.m in Sources */,
 				D70363CD1C086958009EE089 /* SDWebImageCompat.m in Sources */,
 				D70363CC1C086958009EE089 /* SDImageCache.m in Sources */,
+				D74D498C1C45F9A900FBF02A /* CurrentUser.m in Sources */,
 				D70363D51C086958009EE089 /* UIImage+MultiFormat.m in Sources */,
 				D70363D41C086958009EE089 /* UIImage+GIF.m in Sources */,
 				D70363CF1C086958009EE089 /* SDWebImageDownloader.m in Sources */,
@@ -987,7 +994,6 @@
 				D70363E21C0D3C90009EE089 /* ShareUtils.m in Sources */,
 				D70363D61C086958009EE089 /* UIImage+WebP.m in Sources */,
 				D70363D11C086958009EE089 /* SDWebImageManager.m in Sources */,
-				D74D497F1C43615300FBF02A /* CacheUserInfo.m in Sources */,
 				D70363CB1C086958009EE089 /* NSData+ImageContentType.m in Sources */,
 				D70363931C083289009EE089 /* ResultParsered.m in Sources */,
 				D70363901C083147009EE089 /* XTRequest.m in Sources */,

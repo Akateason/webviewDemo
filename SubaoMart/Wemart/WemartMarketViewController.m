@@ -18,6 +18,10 @@
 #import "YouzanViewController.h"
 
 @interface WemartMarketViewController ()
+//{
+//    BOOL isfirstTime ;
+//}
+//@property (nonatomic,copy) NSString      *strIndexPage ;
 
 @property (nonatomic,strong) UIImageView *userImageView ;
 @property (nonatomic,strong) UIImageView *refreshImageView ;
@@ -27,6 +31,15 @@
 @end
 
 @implementation WemartMarketViewController
+
+//- (void)setStrIndexPage:(NSString *)strIndexPage
+//{
+//    if (isfirstTime && strIndexPage != nil)
+//    {
+//        isfirstTime = false ;
+//        _strIndexPage = strIndexPage ;
+//    }
+//}
 
 static float btSide = 25.0 ;
 
@@ -113,14 +126,11 @@ static CGFloat duration = 0.38 ;
 {
     if (!self.view.window) return ;
     
-    
-    NSString * sharedData = [self getSharedData];
-//    NSLog(@"%@", sharedData);
+    NSString * sharedData = [self getSharedData] ;
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[sharedData dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil] ;
     WemartProduct *wemartProduct = [[WemartProduct alloc] initWithDic:dict] ;
     [wemartProduct getImageWillShareWithShareIndex:[notification.object intValue] ctrller:self] ;
 }
-
 
 #pragma mark --
 #pragma mark - Life
@@ -153,16 +163,18 @@ static CGFloat duration = 0.38 ;
 
     [super viewDidLoad];
     
+//    isfirstTime = YES ;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated] ;
 
-    if (self.navigationController.hidesBarsOnSwipe == NO) {
+    if (self.navigationController.hidesBarsOnSwipe == NO && G_CHECK_SWITCH) {
+        
         self.navigationController.hidesBarsOnSwipe = YES ;
+        self.navigationController.navigationBarHidden = NO ;
     }
-    
 }
 
 - (void)leftButtonClicked
@@ -186,25 +198,35 @@ static CGFloat duration = 0.38 ;
     [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:WM_SHUFFLE_NOTIFICAITON] ;
 }
 
-//#pragma mark --
-//#pragma mark - WebView Delegate
+#pragma mark --
+#pragma mark - WebView Delegate
 //- (void)webViewDidFinishLoad:(UIWebView *)webView
 //{
 //    NSString * sharedData = [self getSharedData];
 //    NSLog(@"%@", sharedData);
 //}
-//
+
 //- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 //{
 //    NSLog(@"webView failed :%@", error);
 //}
-//
+
 //- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 //{
-//    NSURL *tempUrl = request.URL ;
-//    NSString *absoluteStr = [tempUrl absoluteString] ;
-////    NSLog(@"you Click : %@", absoluteStr) ;
+//    NSString *absoluteStr = [webView.request.URL absoluteString] ;
+//    self.strIndexPage = absoluteStr ;
+//    NSLog(@"self.strIndexPage : %@",self.strIndexPage) ;
+//    NSLog(@"absoluteStr       : %@",absoluteStr) ;
 //
+//    if ([absoluteStr isEqualToString:self.strIndexPage] && G_CHECK_SWITCH) {
+//        self.navigationController.hidesBarsOnSwipe = YES ;
+//        self.navigationController.navigationBarHidden = NO ;
+//    }
+//    else {
+//        self.navigationController.hidesBarsOnSwipe = NO ;
+//        self.navigationController.navigationBarHidden = YES ;
+//    }
+//    
 //    return YES ;
 //}
 

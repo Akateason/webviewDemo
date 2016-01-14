@@ -22,7 +22,4 @@
 - (NSString *)getUserSex ;
 - (NSString *)getUserSexImageString ;
 
-+ (void)loginWithResult:(ResultParsered *)result ;
-+ (void)logout ;
-
 @end

@@ -34,6 +34,8 @@
 
 #define STR_I_WANT_BUY          @"我在速报酱商城看到了好玩的,快来买买买~"
 
+#define STR_NOT_LOGIN_YET       @"还未登录哦~"
+
 #endif 
 
 /* Header_h */

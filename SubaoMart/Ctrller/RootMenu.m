@@ -46,6 +46,13 @@
 #pragma mark --
 - (void)operateSlider:(NSNotification *)notification
 {
+//    [[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLeft:) object:notification];
+//    [self performSelector:@selector(showLeft:) withObject:notification afterDelay:0.7f];
+    [self showLeft:notification] ;
+}
+
+- (void)showLeft:(NSNotification *)notification
+{
     NSNumber *number = notification.object ;
     if ([number intValue] == 1) {
         [self presentLeftMenuViewController] ;
@@ -89,6 +96,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:SLIDER_NOTIFICATION object:nil] ;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:SHUFFLE_NOTIFICAITON object:nil] ;
 }
 
 #pragma mark --
@@ -105,7 +113,6 @@
     self.backgroundImage = [UIImage imageNamed:@"back3.jpg"];
     
     self.contentViewController  = self.youzanNav ;
-
     
     self.leftC = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftCtrller"] ;
     self.leftMenuViewController = self.leftC ;
@@ -119,7 +126,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view
-    NSLog(@"G_CHECK_SWITCH : %d",G_CHECK_SWITCH) ;
+//    NSLog(@"G_CHECK_SWITCH : %d",G_CHECK_SWITCH) ;
     
     self.panGestureEnabled = G_CHECK_SWITCH ;
     

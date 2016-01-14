@@ -7,7 +7,7 @@
 //
 
 #import "ResultParsered.h"
-#import "User.h"
+#import "CurrentUser.h"
 
 @implementation ResultParsered
 
@@ -21,7 +21,7 @@
         if (_errCode == 10002)
         {
             // token失效
-            [User logout] ;
+            [[CurrentUser shareInstance] logout] ;
         }
         _message = [dict objectForKey:@"message"] ;
         _info    = [dict objectForKey:@"info"] ;

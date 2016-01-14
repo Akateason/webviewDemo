@@ -10,7 +10,7 @@
 #import "Header.h"
 #import "WemartMarketViewController.h"
 #import "DigitInformation.h"
-#import "User.h"
+#import "CurrentUser.h"
 #import "ServerRequest.h"
 
 @interface NavCtrller ()
@@ -23,7 +23,7 @@
 
 - (NSString *)userIDStr
 {
-    return [NSString stringWithFormat:@"%d",G_USER.u_id] ;
+    return [NSString stringWithFormat:@"%d",[[CurrentUser shareInstance] getCurrentUser].u_id] ;
 }
 
 - (NSString *)sign
