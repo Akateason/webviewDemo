@@ -38,6 +38,7 @@
 		D70363DF1C0C4CC2009EE089 /* NavCtrller.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363DE1C0C4CC2009EE089 /* NavCtrller.m */; };
 		D70363E21C0D3C90009EE089 /* ShareUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363E11C0D3C90009EE089 /* ShareUtils.m */; };
 		D70363E51C0D4DC3009EE089 /* WemartProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = D70363E41C0D4DC3009EE089 /* WemartProduct.m */; };
+		D71071451C479CC100E2F1C1 /* SingletonSegement.m in Sources */ = {isa = PBXBuildFile; fileRef = D71071441C479CC100E2F1C1 /* SingletonSegement.m */; };
 		D729EF831BFD6C3B002DEAF7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EF821BFD6C3B002DEAF7 /* main.m */; };
 		D729EF861BFD6C3C002DEAF7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D729EF851BFD6C3C002DEAF7 /* AppDelegate.m */; };
 		D729EF8C1BFD6C3C002DEAF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D729EF8A1BFD6C3C002DEAF7 /* Main.storyboard */; };
@@ -170,6 +171,8 @@
 		D70363E11C0D3C90009EE089 /* ShareUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareUtils.m; sourceTree = "<group>"; };
 		D70363E31C0D4DC3009EE089 /* WemartProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WemartProduct.h; path = Model/WemartProduct.h; sourceTree = "<group>"; };
 		D70363E41C0D4DC3009EE089 /* WemartProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WemartProduct.m; path = Model/WemartProduct.m; sourceTree = "<group>"; };
+		D71071431C479CC100E2F1C1 /* SingletonSegement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SingletonSegement.h; path = Ctrller/SingletonSegement.h; sourceTree = "<group>"; };
+		D71071441C479CC100E2F1C1 /* SingletonSegement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SingletonSegement.m; path = Ctrller/SingletonSegement.m; sourceTree = "<group>"; };
 		D729EF7E1BFD6C3B002DEAF7 /* SubaoMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SubaoMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D729EF821BFD6C3B002DEAF7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D729EF841BFD6C3C002DEAF7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -496,10 +499,10 @@
 				D729EFE71BFDE18C002DEAF7 /* RightCtrller.m */,
 				D729EFF21C06A9D1002DEAF7 /* RightCell.h */,
 				D729EFF31C06A9D1002DEAF7 /* RightCell.m */,
-				D70363DD1C0C4CC2009EE089 /* NavCtrller.h */,
-				D70363DE1C0C4CC2009EE089 /* NavCtrller.m */,
 				D74D49641C40CC7800FBF02A /* UIViewController+NavExtension.h */,
 				D74D49651C40CC7800FBF02A /* UIViewController+NavExtension.m */,
+				D71071431C479CC100E2F1C1 /* SingletonSegement.h */,
+				D71071441C479CC100E2F1C1 /* SingletonSegement.m */,
 				D74D49831C439D5F00FBF02A /* wm */,
 				D74D497C1C435EFA00FBF02A /* yz */,
 			);
@@ -746,6 +749,8 @@
 		D74D49831C439D5F00FBF02A /* wm */ = {
 			isa = PBXGroup;
 			children = (
+				D70363DD1C0C4CC2009EE089 /* NavCtrller.h */,
+				D70363DE1C0C4CC2009EE089 /* NavCtrller.m */,
 				D70363DA1C0C48E5009EE089 /* WemartMarketViewController.h */,
 				D70363DB1C0C48E5009EE089 /* WemartMarketViewController.m */,
 			);
@@ -984,6 +989,7 @@
 				D703639F1C083DF5009EE089 /* User.m in Sources */,
 				D703639C1C08356E009EE089 /* CommonFunc.m in Sources */,
 				D70363E51C0D4DC3009EE089 /* WemartProduct.m in Sources */,
+				D71071451C479CC100E2F1C1 /* SingletonSegement.m in Sources */,
 				D70363DF1C0C4CC2009EE089 /* NavCtrller.m in Sources */,
 				D729EF831BFD6C3B002DEAF7 /* main.m in Sources */,
 				D729EFE21BFDD1AC002DEAF7 /* LeftCtrller.m in Sources */,

@@ -16,12 +16,9 @@
 #import "XTAnimation.h"
 #import "UIViewController+NavExtension.h"
 #import "YouzanViewController.h"
+#import "SingletonSegement.h"
 
 @interface WemartMarketViewController ()
-//{
-//    BOOL isfirstTime ;
-//}
-//@property (nonatomic,copy) NSString      *strIndexPage ;
 
 @property (nonatomic,strong) UIImageView *userImageView ;
 @property (nonatomic,strong) UIImageView *refreshImageView ;
@@ -31,15 +28,6 @@
 @end
 
 @implementation WemartMarketViewController
-
-//- (void)setStrIndexPage:(NSString *)strIndexPage
-//{
-//    if (isfirstTime && strIndexPage != nil)
-//    {
-//        isfirstTime = false ;
-//        _strIndexPage = strIndexPage ;
-//    }
-//}
 
 static float btSide = 25.0 ;
 
@@ -151,8 +139,8 @@ static CGFloat duration = 0.38 ;
                                        bReplay:^{
                                         [self replay] ;
         }
-                                      bShuffle:^{
-                                        [self shuffle] ;
+                                      bShuffle:^(int index){
+                                        [self shuffleWithIndex:index] ;
         }
          ] ;
     }
@@ -161,9 +149,7 @@ static CGFloat duration = 0.38 ;
         self.navigationController.navigationBarHidden = YES ;
     }
 
-    [super viewDidLoad];
-    
-//    isfirstTime = YES ;
+    [super viewDidLoad] ;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -175,7 +161,11 @@ static CGFloat duration = 0.38 ;
         self.navigationController.hidesBarsOnSwipe = YES ;
         self.navigationController.navigationBarHidden = NO ;
     }
+    
+    [self.segement setSelectedSegmentIndex:[SingletonSegement shareInstance].selectedIndex] ;
 }
+
+
 
 - (void)leftButtonClicked
 {
@@ -193,9 +183,17 @@ static CGFloat duration = 0.38 ;
     [webView reload] ;
 }
 
-- (void)shuffle
+- (void)shuffleWithIndex:(int)index
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:WM_SHUFFLE_NOTIFICAITON] ;
+    //NSLog(@"shuffleWithIndex %d",index) ;
+    [SingletonSegement shareInstance].selectedIndex = index ;
+    
+    if (index == 0) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:YZ_SHUFFLE_NOTIFICAITON] ;
+    }
+    else if (index == 1) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:WM_SHUFFLE_NOTIFICAITON] ;
+    }
 }
 
 #pragma mark --

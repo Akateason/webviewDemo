@@ -20,6 +20,8 @@
 #import "YouZanProduct.h"
 #import "CurrentUser.h"
 #import "HudManager.h"
+#import "SingletonSegement.h"
+
 
 /*
  页面的链接： 主要的事情多说几遍！！！！
@@ -35,7 +37,8 @@
  【我的购物记录】和【我的返现】里面因为有赞账号和三方账号没有打通，所以暂时还不能进行红包等等查看，我们已经在开发中了，敬请期待！！
  */
 
-static NSString *homePageUrl = @"https://wap.koudaitong.com/v2/showcase/homepage?alias=v8a881k2" ;
+//static NSString *homePageUrl = @"https://wap.koudaitong.com/v2/showcase/homepage?alias=v8a881k2" ;
+static NSString *homePageUrl = @"https://wap.koudaitong.com/v2/allgoods/14053342" ;
 
 @interface YouzanViewController () <UIWebViewDelegate>
 {
@@ -47,7 +50,6 @@ static NSString *homePageUrl = @"https://wap.koudaitong.com/v2/showcase/homepage
 @property (nonatomic,strong) UIImageView *shuffleImageView ;
 
 @property (nonatomic,strong) UIWebView *homePageWebView ;
-
 
 @end
 
@@ -174,20 +176,24 @@ static float btSide = 25.0 ;
 {
     if ([[CurrentUser shareInstance] isLogined])
     {
-        YZUserModel *userModel = [CurrentUser getYZUserModelFromCacheUser:[[CurrentUser shareInstance] getCurrentUser]] ;
-        //注意:只要调用接口，一定要记得appID和appSecret的值的设置
-        [YZSDK registerYZUser:userModel callBack:^(NSString *message, BOOL isError) {
-            if(isError) {
-                NSLog(@"YZSDK失败") ;
-                
-            } else {
-                NSLog(@"YZSDK成功") ;
-
+//        YZUserModel *userModel = [CurrentUser getYZUserModelFromCacheUser:[[CurrentUser shareInstance] getCurrentUser]] ;
+//        //注意:只要调用接口，一定要记得appID和appSecret的值的设置
+//        [YZSDK registerYZUser:userModel callBack:^(NSString *message, BOOL isError) {
+//            NSLog(@"message : %@",message) ;
+//            if(isError) {
+//                NSLog(@"YZSDK失败") ;
+        
                 NSURL *url = [NSURL URLWithString:urlString];
                 NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
-                [self.homePageWebView loadRequest:urlRequest];
-            }
-        }];
+                [self.homePageWebView loadRequest:urlRequest];                
+//            } else {
+//                NSLog(@"YZSDK成功") ;
+//
+//                NSURL *url = [NSURL URLWithString:urlString];
+//                NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+//                [self.homePageWebView loadRequest:urlRequest];
+//            }
+//        }];
     }
     else
     {
@@ -281,8 +287,8 @@ static float btSide = 25.0 ;
                                        bReplay:^{
                                         [self replay] ;
                                     }
-                                      bShuffle:^{
-                                        [self shuffle] ;
+                                      bShuffle:^(int index){
+                                          [self shuffleWithIndex:index] ;
                                     }
          ] ;
     }
@@ -306,6 +312,8 @@ static float btSide = 25.0 ;
     if (self.navigationController.hidesBarsOnSwipe == NO) {
         self.navigationController.hidesBarsOnSwipe = YES ;
     }
+    
+    [self.segement setSelectedSegmentIndex:[SingletonSegement shareInstance].selectedIndex] ;
 }
 
 #pragma mark --
@@ -325,9 +333,18 @@ static float btSide = 25.0 ;
     [self.homePageWebView reload] ;
 }
 
-- (void)shuffle
+- (void)shuffleWithIndex:(int)index
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:YZ_SHUFFLE_NOTIFICAITON] ;
+//    NSLog(@"shuffleWithIndex %d",index) ;
+    [SingletonSegement shareInstance].selectedIndex = index ;
+    
+    if (index == 0) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:YZ_SHUFFLE_NOTIFICAITON] ;
+    }
+    else if (index == 1) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:WM_SHUFFLE_NOTIFICAITON] ;
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -336,8 +353,6 @@ static float btSide = 25.0 ;
 }
 
 #pragma mark -- 
-
-
 
 /*
 #pragma mark - Navigation

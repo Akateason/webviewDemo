@@ -25,6 +25,7 @@
 @end
 
 @implementation RootMenu
+
 #pragma mark --
 - (UINavigationController *)youzanNav
 {
@@ -46,8 +47,6 @@
 #pragma mark --
 - (void)operateSlider:(NSNotification *)notification
 {
-//    [[self class] cancelPreviousPerformRequestsWithTarget:self selector:@selector(showLeft:) object:notification];
-//    [self performSelector:@selector(showLeft:) withObject:notification afterDelay:0.7f];
     [self showLeft:notification] ;
 }
 
@@ -67,13 +66,12 @@
     NSString *backString = notification.object ;
 
     if ([backString isEqualToString:WM_SHUFFLE_NOTIFICAITON]) {
-        self.contentViewController  = self.youzanNav ;
-    }
-    else if ([backString isEqualToString:YZ_SHUFFLE_NOTIFICAITON]) {
         self.contentViewController  = self.weimaoNav ;
     }
+    else if ([backString isEqualToString:YZ_SHUFFLE_NOTIFICAITON]) {
+        self.contentViewController  = self.youzanNav ;
+    }
 }
-
 
 - (instancetype)initWithCoder:(NSCoder *)coder
 {
@@ -129,7 +127,6 @@
 //    NSLog(@"G_CHECK_SWITCH : %d",G_CHECK_SWITCH) ;
     
     self.panGestureEnabled = G_CHECK_SWITCH ;
-    
     self.contentViewController  = G_CHECK_SWITCH ? self.youzanNav : self.weimaoNav ;
 
 }
@@ -141,7 +138,6 @@
 
 #pragma mark -
 #pragma mark RESideMenu Delegate
-
 - (void)sideMenu:(RESideMenu *)sideMenu willShowMenuViewController:(UIViewController *)menuViewController
 {
 //    NSLog(@"willShowMenuViewController: %@", NSStringFromClass([menuViewController class]));

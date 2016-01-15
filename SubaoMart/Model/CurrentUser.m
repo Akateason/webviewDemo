@@ -37,7 +37,7 @@ static dispatch_once_t onceToken ;
 
 - (BOOL)currentUserExist
 {
-    if ([self getCurrentUserDictionaryFromDisk] != nil || ![[self getCurrentUserDictionaryFromDisk] isEqual:@{}])
+    if (![self getCurrentUserDictionaryFromDisk] || [[self getCurrentUserDictionaryFromDisk] isEqual:@{}])
     {
         return NO ;
     }
@@ -60,7 +60,9 @@ static dispatch_once_t onceToken ;
 
 - (NSDictionary *)getCurrentUserDictionaryFromDisk
 {
-    return [[NSUserDefaults standardUserDefaults] valueForKey:k_key_currentUserDictionary] ;
+    NSDictionary *resultDic = [[NSUserDefaults standardUserDefaults] valueForKey:k_key_currentUserDictionary] ;
+    NSLog(@"from disk : %@",resultDic) ;
+    return resultDic ;
 }
 
 - (User *)getCurrentUserFromDisk

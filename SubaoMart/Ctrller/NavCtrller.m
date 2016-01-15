@@ -42,8 +42,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     NSString *appScheme = @"SubaoMart";
-    NSString *url = [NSString stringWithFormat:@"%@&appId=%@&userId=%@&sign=%@",URL_SHOP_WEMART,WEMART_APPID,self.userIDStr,self.sign] ;
-//    NSLog(@"url : %@",url) ;
+    NSString *url = [NSString stringWithFormat:@"%@&appId=%@&userId=%@&sign=%@%@",URL_SHOP_WEMART,WEMART_APPID,self.userIDStr,self.sign,URL_WEMART_SHOP_TAIL] ;
+    NSLog(@"homeurl : %@",url) ;
     
     WemartMarketViewController *marketVC = [[WemartMarketViewController alloc] init] ;
     marketVC.appScheme = appScheme ;

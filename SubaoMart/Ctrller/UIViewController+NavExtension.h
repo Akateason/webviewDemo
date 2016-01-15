@@ -11,7 +11,7 @@
 typedef void (^leftButtonClickedBlock)() ;
 typedef void (^rightButtonClickedBlock)() ;
 typedef void (^replayBlock)() ;
-typedef void (^shuffleBlock)() ;
+typedef void (^shuffleBlock)(int index) ;
 
 @interface UIViewController (NavExtension)
 
@@ -19,6 +19,8 @@ typedef void (^shuffleBlock)() ;
 @property (nonatomic,copy) rightButtonClickedBlock  block_rightButtonClicked ;
 @property (nonatomic,copy) replayBlock              block_replay ;
 @property (nonatomic,copy) shuffleBlock             block_shuffle ;
+
+@property (nonatomic,strong) UISegmentedControl     *segement ;
 
 - (void)customNavigationBarWithUserImage:(UIImageView *)m_userImage
                               shareImage:(UIImageView *)m_shareImage
@@ -28,8 +30,5 @@ typedef void (^shuffleBlock)() ;
                            bRightClicked:(rightButtonClickedBlock)rightBlock
                                  bReplay:(replayBlock)replayBlock
                                 bShuffle:(shuffleBlock)shuffleBlock ;
-
-- (void)customNavigationBarWithShareImage:(UIImageView *)m_shareImage
-                            bRightClicked:(rightButtonClickedBlock)rightBlock ;
 
 @end
