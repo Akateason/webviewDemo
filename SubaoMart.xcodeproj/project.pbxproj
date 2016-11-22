@@ -86,9 +86,7 @@
 		D729F0561C07142F002DEAF7 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D729F0521C07142F002DEAF7 /* WeiboSDK.bundle */; };
 		D729F1D81C071E69002DEAF7 /* ServerRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = D729F1D71C071E69002DEAF7 /* ServerRequest.m */; };
 		D74D49661C40CC7800FBF02A /* UIViewController+NavExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D49651C40CC7800FBF02A /* UIViewController+NavExtension.m */; };
-		D74D49691C40FDB000FBF02A /* YouzanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D49681C40FDB000FBF02A /* YouzanViewController.m */; };
 		D74D497B1C434F6700FBF02A /* libYouzanIOSSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D74D49711C434F6700FBF02A /* libYouzanIOSSDK.a */; };
-		D74D49821C4364A700FBF02A /* CommonWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D49811C4364A700FBF02A /* CommonWebViewController.m */; };
 		D74D49861C43BFB900FBF02A /* YouZanProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D49851C43BFB900FBF02A /* YouZanProduct.m */; };
 		D74D498C1C45F9A900FBF02A /* CurrentUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D498B1C45F9A900FBF02A /* CurrentUser.m */; };
 		D74D498F1C463AF300FBF02A /* HudManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D74D498E1C463AF300FBF02A /* HudManager.m */; };
@@ -280,8 +278,6 @@
 		D729F28A1C07FF35002DEAF7 /* UrlRequestHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UrlRequestHeader.h; path = SubaoMart/Custom/UrlRequestHeader.h; sourceTree = "<group>"; };
 		D74D49641C40CC7800FBF02A /* UIViewController+NavExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+NavExtension.h"; path = "Ctrller/UIViewController+NavExtension.h"; sourceTree = "<group>"; };
 		D74D49651C40CC7800FBF02A /* UIViewController+NavExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+NavExtension.m"; path = "Ctrller/UIViewController+NavExtension.m"; sourceTree = "<group>"; };
-		D74D49671C40FDB000FBF02A /* YouzanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouzanViewController.h; path = Ctrller/YouzanViewController.h; sourceTree = "<group>"; };
-		D74D49681C40FDB000FBF02A /* YouzanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouzanViewController.m; path = Ctrller/YouzanViewController.m; sourceTree = "<group>"; };
 		D74D496F1C434F6700FBF02A /* NSError+YZNetworkError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+YZNetworkError.h"; sourceTree = "<group>"; };
 		D74D49701C434F6700FBF02A /* NSMutableDictionary+NullObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+NullObject.h"; sourceTree = "<group>"; };
 		D74D49711C434F6700FBF02A /* libYouzanIOSSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libYouzanIOSSDK.a; sourceTree = "<group>"; };
@@ -292,8 +288,6 @@
 		D74D49781C434F6700FBF02A /* OpenTradeServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenTradeServiceProtocol.h; sourceTree = "<group>"; };
 		D74D49791C434F6700FBF02A /* YZSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZSDK.h; sourceTree = "<group>"; };
 		D74D497A1C434F6700FBF02A /* YZSDKDefination.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZSDKDefination.h; sourceTree = "<group>"; };
-		D74D49801C4364A700FBF02A /* CommonWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonWebViewController.h; path = Ctrller/CommonWebViewController.h; sourceTree = "<group>"; };
-		D74D49811C4364A700FBF02A /* CommonWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommonWebViewController.m; path = Ctrller/CommonWebViewController.m; sourceTree = "<group>"; };
 		D74D49841C43BFB900FBF02A /* YouZanProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YouZanProduct.h; path = Model/YouZanProduct.h; sourceTree = "<group>"; };
 		D74D49851C43BFB900FBF02A /* YouZanProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YouZanProduct.m; path = Model/YouZanProduct.m; sourceTree = "<group>"; };
 		D74D498A1C45F9A900FBF02A /* CurrentUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CurrentUser.h; path = Model/CurrentUser.h; sourceTree = "<group>"; };
@@ -504,7 +498,6 @@
 				D71071431C479CC100E2F1C1 /* SingletonSegement.h */,
 				D71071441C479CC100E2F1C1 /* SingletonSegement.m */,
 				D74D49831C439D5F00FBF02A /* wm */,
-				D74D497C1C435EFA00FBF02A /* yz */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -735,17 +728,6 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		D74D497C1C435EFA00FBF02A /* yz */ = {
-			isa = PBXGroup;
-			children = (
-				D74D49671C40FDB000FBF02A /* YouzanViewController.h */,
-				D74D49681C40FDB000FBF02A /* YouzanViewController.m */,
-				D74D49801C4364A700FBF02A /* CommonWebViewController.h */,
-				D74D49811C4364A700FBF02A /* CommonWebViewController.m */,
-			);
-			name = yz;
-			sourceTree = "<group>";
-		};
 		D74D49831C439D5F00FBF02A /* wm */ = {
 			isa = PBXGroup;
 			children = (
@@ -964,7 +946,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D74D49691C40FDB000FBF02A /* YouzanViewController.m in Sources */,
 				D70363CE1C086958009EE089 /* SDWebImageDecoder.m in Sources */,
 				D729EFDB1BFDD096002DEAF7 /* RESideMenu.m in Sources */,
 				D74D498F1C463AF300FBF02A /* HudManager.m in Sources */,
@@ -983,7 +964,6 @@
 				D74D49661C40CC7800FBF02A /* UIViewController+NavExtension.m in Sources */,
 				D729EFDF1BFDD154002DEAF7 /* RootMenu.m in Sources */,
 				D70363D81C086958009EE089 /* UIImageView+WebCache.m in Sources */,
-				D74D49821C4364A700FBF02A /* CommonWebViewController.m in Sources */,
 				D70363D31C086958009EE089 /* UIButton+WebCache.m in Sources */,
 				D729EFD11BFDAFAA002DEAF7 /* UIImage+AddFunction.m in Sources */,
 				D703639F1C083DF5009EE089 /* User.m in Sources */,

@@ -94,15 +94,15 @@ static const void *keySegement              = &keySegement ;
                                             refreshImage:m_refreshImage] ;
 
     // segement
-    UISegmentedControl *segement = [[UISegmentedControl alloc] initWithItems:@[@"店铺1",@"店铺2"]] ;
-    segement.tintColor = [UIColor whiteColor] ;
-    segement.frame = CGRectMake(0 , 0 , 140 , 30) ;
-    [segement setSelectedSegmentIndex:0] ;
-    [segement addTarget:self
-                  action:@selector(switchTheShop:)
-        forControlEvents:UIControlEventValueChanged] ;
-    self.segement = segement ;
-    self.navigationItem.titleView = self.segement ;
+//    UISegmentedControl *segement = [[UISegmentedControl alloc] initWithItems:@[@"店铺1",@"店铺2"]] ;
+//    segement.tintColor = [UIColor whiteColor] ;
+//    segement.frame = CGRectMake(0 , 0 , 140 , 30) ;
+//    [segement setSelectedSegmentIndex:0] ;
+//    [segement addTarget:self
+//                  action:@selector(switchTheShop:)
+//        forControlEvents:UIControlEventValueChanged] ;
+//    self.segement = segement ;
+//    self.navigationItem.titleView = self.segement ;
 }
 
 - (void)switchTheShop:(UISegmentedControl *)segement

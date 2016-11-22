@@ -12,14 +12,14 @@
 #import "Header.h"
 #import "NavCtrller.h"
 #import "DigitInformation.h"
-#import "YouzanViewController.h"
+//#import "YouzanViewController.h"
 
 @interface RootMenu ()
 
 @property (nonatomic,strong) LeftCtrller    *leftC  ;
 @property (nonatomic,strong) RightCtrller   *rightC ;
 
-@property (nonatomic,strong) UINavigationController *youzanNav ;
+//@property (nonatomic,strong) UINavigationController *youzanNav ;
 @property (nonatomic,strong) NavCtrller             *weimaoNav ;
 
 @end
@@ -27,14 +27,14 @@
 @implementation RootMenu
 
 #pragma mark --
-- (UINavigationController *)youzanNav
-{
-    if (!_youzanNav) {
-        YouzanViewController *youzanCtrller = [[YouzanViewController alloc] init] ;
-        _youzanNav = [[UINavigationController alloc] initWithRootViewController:youzanCtrller] ;
-    }
-    return _youzanNav ;
-}
+//- (UINavigationController *)youzanNav
+//{
+//    if (!_youzanNav) {
+//        YouzanViewController *youzanCtrller = [[YouzanViewController alloc] init] ;
+//        _youzanNav = [[UINavigationController alloc] initWithRootViewController:youzanCtrller] ;
+//    }
+//    return _youzanNav ;
+//}
 
 - (NavCtrller *)weimaoNav
 {
@@ -68,9 +68,9 @@
     if ([backString isEqualToString:WM_SHUFFLE_NOTIFICAITON]) {
         self.contentViewController  = self.weimaoNav ;
     }
-    else if ([backString isEqualToString:YZ_SHUFFLE_NOTIFICAITON]) {
-        self.contentViewController  = self.youzanNav ;
-    }
+//    else if ([backString isEqualToString:YZ_SHUFFLE_NOTIFICAITON]) {
+////        self.contentViewController  = self.youzanNav ;
+//    }
 }
 
 - (instancetype)initWithCoder:(NSCoder *)coder
@@ -110,7 +110,7 @@
     self.contentViewShadowEnabled = YES;
     self.backgroundImage = [UIImage imageNamed:@"back3.jpg"];
     
-    self.contentViewController  = self.youzanNav ;
+    self.contentViewController  = self.weimaoNav ;
     
     self.leftC = [self.storyboard instantiateViewControllerWithIdentifier:@"LeftCtrller"] ;
     self.leftMenuViewController = self.leftC ;
@@ -127,8 +127,8 @@
 //    NSLog(@"G_CHECK_SWITCH : %d",G_CHECK_SWITCH) ;
     
     self.panGestureEnabled = G_CHECK_SWITCH ;
-    self.contentViewController  = G_CHECK_SWITCH ? self.youzanNav : self.weimaoNav ;
-
+//    self.contentViewController  = G_CHECK_SWITCH ? self.youzanNav : self.weimaoNav ;
+    self.contentViewController = self.weimaoNav ;
 }
 
 - (void)didReceiveMemoryWarning {

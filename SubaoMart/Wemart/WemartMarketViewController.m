@@ -15,7 +15,6 @@
 #import "UIImage+AddFunction.h"
 #import "XTAnimation.h"
 #import "UIViewController+NavExtension.h"
-#import "YouzanViewController.h"
 #import "SingletonSegement.h"
 
 @interface WemartMarketViewController ()
@@ -140,9 +139,12 @@ static CGFloat duration = 0.38 ;
                                         [self replay] ;
         }
                                       bShuffle:^(int index){
-                                        [self shuffleWithIndex:index] ;
+//                                        [self shuffleWithIndex:index] ;
         }
          ] ;
+        
+        
+
     }
     else
     {
@@ -162,10 +164,10 @@ static CGFloat duration = 0.38 ;
         self.navigationController.navigationBarHidden = NO ;
     }
     
-    [self.segement setSelectedSegmentIndex:[SingletonSegement shareInstance].selectedIndex] ;
+//    [self.segement setSelectedSegmentIndex:[SingletonSegement shareInstance].selectedIndex] ;
+    [self.segement setSelectedSegmentIndex:1] ;
+    
 }
-
-
 
 - (void)leftButtonClicked
 {
@@ -188,44 +190,14 @@ static CGFloat duration = 0.38 ;
     //NSLog(@"shuffleWithIndex %d",index) ;
     [SingletonSegement shareInstance].selectedIndex = index ;
     
-    if (index == 0) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:YZ_SHUFFLE_NOTIFICAITON] ;
-    }
-    else if (index == 1) {
+//    if (index == 0) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:YZ_SHUFFLE_NOTIFICAITON] ;
+//    }
+//    else if (index == 1) {
         [[NSNotificationCenter defaultCenter] postNotificationName:SHUFFLE_NOTIFICAITON object:WM_SHUFFLE_NOTIFICAITON] ;
-    }
+//    }
 }
 
-#pragma mark --
-#pragma mark - WebView Delegate
-//- (void)webViewDidFinishLoad:(UIWebView *)webView
-//{
-//    NSString * sharedData = [self getSharedData];
-//    NSLog(@"%@", sharedData);
-//}
 
-//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-//{
-//    NSLog(@"webView failed :%@", error);
-//}
-
-//- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-//{
-//    NSString *absoluteStr = [webView.request.URL absoluteString] ;
-//    self.strIndexPage = absoluteStr ;
-//    NSLog(@"self.strIndexPage : %@",self.strIndexPage) ;
-//    NSLog(@"absoluteStr       : %@",absoluteStr) ;
-//
-//    if ([absoluteStr isEqualToString:self.strIndexPage] && G_CHECK_SWITCH) {
-//        self.navigationController.hidesBarsOnSwipe = YES ;
-//        self.navigationController.navigationBarHidden = NO ;
-//    }
-//    else {
-//        self.navigationController.hidesBarsOnSwipe = NO ;
-//        self.navigationController.navigationBarHidden = YES ;
-//    }
-//    
-//    return YES ;
-//}
 
 @end

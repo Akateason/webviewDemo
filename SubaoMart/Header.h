@@ -14,7 +14,8 @@
 #define PATH_TOKEN_SAVE         @"Documents/tokenArchive.archive"
 
 
-#define URL_SHOP_WEMART         @"http://www.wemart.cn/v2/weimao/index.html?disableCache=true&shopId=shop000201505295985&wmode=app"
+#define URL_SHOP_WEMART         @"http://www.wemart.cn/mobile/?chanId=&shelfNo=1889&sellerId=126&a=shelf&m=index"
+//@"http://www.wemart.cn/v2/weimao/index.html?disableCache=true&shopId=shop000201505295985&wmode=app"
 #define URL_WEMART_SHOP_TAIL    @"#gl/shop000201505295985/0"
 
 
